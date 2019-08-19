@@ -60,39 +60,3 @@ ${printElement("h2", languageObject.name, "text-center")}
 ${printTranslatorInput(language)}`;
 }
 
-// Event handler for translation button
-document.querySelector("body").addEventListener("click", function() {
-  const language = event.target.id.split("-")[0];
-  console.log(language)
-  console.log(event.target)
-  const input = document.querySelector(`#${language}-input`).value;
-  let translatedPhrase = "";
-
-  if(language === "spanish"){
-
-  } else if (language === "french"){
-
-  } else if (language === "hindi"){
-    
-  }
-
-      translatedPhrase = spanishData[input];
-      break;
-    case "french":
-      translatedPhrase = frenchData[input];
-      break;
-    case "mandarin":
-      translatedPhrase = mandarinData[input];
-      break;
-    case "hindi":
-      translatedPhrase = "";
-      break;
-  }
-
-  if (translatedPhrase) {
-    document.querySelector("#spanish-output").innerHTML = translatedPhrase;
-  } else {
-    document.querySelector("#spanish-output").innerHTML =
-      "Sorry, that phrase isn't in the dictionary";
-  }
-});
