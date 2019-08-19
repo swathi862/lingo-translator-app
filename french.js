@@ -46,76 +46,25 @@ const frenchData = {
   }
 };
 
-// Generic function to build an HTML component
-function printElement(element, text, className) {
-  return `<${element} class=${className}>${text}</${element}>`;
-}
-
-// Printer functions
-function printLanguageHeading() {
-  return printElement("h2", frenchData.name, "text-center mt-4");
-}
-
-function printCountries() {
-  let countriesList = "<h5>Countries Spoken:</h5><ul>";
-  for (var i = 0; i < frenchData.countriesSpoken.length; i++) {
-    const currentCountry = frenchData.countriesSpoken[i];
-    countriesList += printElement("li", currentCountry);
-  }
-  return (countriesList += "</ul>");
-}
-
-function printNotablePeople() {
-  let peopleList = "<h5>Notable Speakers:</h5><ul>";
-  for (var i = 0; i < frenchData.notablePeople.length; i++) {
-    const currentPerson = frenchData.notablePeople[i];
-    peopleList += printElement("li", currentPerson);
-  }
-  return (peopleList += "</ul>");
-}
-
-function printFunFacts() {
-  let funFacts = "<h5>Fun Facts:</h5><section>";
-  funFacts += `<p>Letters in alphabet: ${
-    frenchData.funFacts.lettersInAlphabet
-  }</p>`;
-  funFacts += `<p>Number of speakers: ${
-    frenchData.funFacts.numberOfSpeakers
-  }</p>`;
-  funFacts += `<p>Related languages: ${frenchData.funFacts.relatedLanguages.join(
-    ", "
-  )}</p>`;
-  return (funFacts += "</section>");
-}
-
-function printTranslatorInput(language) {
-  let translatorHTMLString = `<div class="translator-form">
-    <input type="text" id="${language}-input">
-    <button id="${language}-submit">Translate to ${language}</button>
-    <section id="french-output"></section>
-  </div>`;
-  return translatorHTMLString;
-}
 
 function buildFrenchPage() {
   return `
-${printLanguageHeading()}
+${printElement("h2", frenchData.name, "text-center")}
 <div class="row">
   <section class="col-sm-4">
-    ${printCountries()}
+    ${printList(frenchData.countriesSpoken, "Countries Spoken")}
   </section>
   <section class="col-sm-4">
-    ${printNotablePeople()}
+    ${printList(frenchData.notablePeople, "Notable French Speakers")}
   </section>
   <section class="col-sm-4">
-    ${printFunFacts()}
+    ${printFunFacts(frenchData)}
   </section>
 </div>
 ${printTranslatorInput("french")}`;
 }
 
 // Add event listener to nav bar link that runs printer function
-console.log(document.querySelector("#french"))
 document.querySelector("#french").addEventListener("click", function(){
   console.log("clicked on this in the nav bar")
   document.querySelector("#language-container").innerHTML = buildFrenchPage()

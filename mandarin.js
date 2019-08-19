@@ -38,3 +38,39 @@ const mandarinData = {
       whatsYourName: " 你叫什么名字"
     }
   }
+
+
+  function buildMandarinPage() {
+    return `
+  ${printElement("h2", mandarinData.name, "text-center")}
+  <div class="row">
+    <section class="col-sm-4">
+      ${printList(mandarinData.countriesSpoken, "Countries Spoken")}
+    </section>
+    <section class="col-sm-4">
+      ${printList(mandarinData.notablePeople, "Notable French Speakers")}
+    </section>
+    <section class="col-sm-4">
+      ${printFunFacts(mandarinData)}
+    </section>
+  </div>
+  ${printTranslatorInput("mandarin")}`;
+  }
+
+  document.querySelector("#mandarin").addEventListener("click", function(){
+    document.querySelector("#language-container").innerHTML = buildMandarinPage()
+  })
+
+  // Event handler for translation button
+document.querySelector("body").addEventListener("click", function() {
+  if (event.target.id === "mandarin-submit") {
+    const input = document.querySelector("#mandarin-input").value;
+    const translatedPhrase = mandarinData.dictionary[input];
+    if (translatedPhrase) {
+      document.querySelector("#mandarin-output").innerHTML = translatedPhrase;
+    } else {
+      document.querySelector("#mandarin-output").innerHTML =
+        "Sorry, that phrase isn't in the dictionary";
+    }
+  }
+});
