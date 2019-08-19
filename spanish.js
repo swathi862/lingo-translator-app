@@ -46,8 +46,3 @@ const spanishData = {
     }
   };
 
-  // Add nav event listener
-  document.querySelector("#spanish").addEventListener("click", function(){
-    document.querySelector("#language-container").innerHTML = buildLanguagePage(spanishData, "spanish")
-  })
-

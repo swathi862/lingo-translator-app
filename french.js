@@ -47,28 +47,5 @@ const frenchData = {
 };
 
 
-function buildFrenchPage() {
-  return `
-${printElement("h2", frenchData.name, "text-center")}
-<div class="row">
-  <section class="col-sm-4">
-    ${printList(frenchData.countriesSpoken, "Countries Spoken")}
-  </section>
-  <section class="col-sm-4">
-    ${printList(frenchData.notablePeople, "Notable French Speakers")}
-  </section>
-  <section class="col-sm-4">
-    ${printFunFacts(frenchData)}
-  </section>
-</div>
-${printTranslatorInput("french")}`;
-}
-
-// Add event listener to nav bar link that runs printer function
-document.querySelector("#french").addEventListener("click", function(){
-  console.log("clicked on this in the nav bar")
-  document.querySelector("#language-container").innerHTML = buildFrenchPage()
-})
-
 
 

@@ -40,24 +40,5 @@ const mandarinData = {
   }
 
 
-  function buildMandarinPage() {
-    return `
-  ${printElement("h2", mandarinData.name, "text-center")}
-  <div class="row">
-    <section class="col-sm-4">
-      ${printList(mandarinData.countriesSpoken, "Countries Spoken")}
-    </section>
-    <section class="col-sm-4">
-      ${printList(mandarinData.notablePeople, "Notable French Speakers")}
-    </section>
-    <section class="col-sm-4">
-      ${printFunFacts(mandarinData)}
-    </section>
-  </div>
-  ${printTranslatorInput("mandarin")}`;
-  }
 
-  document.querySelector("#mandarin").addEventListener("click", function(){
-    document.querySelector("#language-container").innerHTML = buildMandarinPage()
-  })
 
