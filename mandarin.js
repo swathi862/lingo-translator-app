@@ -61,16 +61,3 @@ const mandarinData = {
     document.querySelector("#language-container").innerHTML = buildMandarinPage()
   })
 
-  // Event handler for translation button
-document.querySelector("body").addEventListener("click", function() {
-  if (event.target.id === "mandarin-submit") {
-    const input = document.querySelector("#mandarin-input").value;
-    const translatedPhrase = mandarinData.dictionary[input];
-    if (translatedPhrase) {
-      document.querySelector("#mandarin-output").innerHTML = translatedPhrase;
-    } else {
-      document.querySelector("#mandarin-output").innerHTML =
-        "Sorry, that phrase isn't in the dictionary";
-    }
-  }
-});

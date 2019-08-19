@@ -46,38 +46,8 @@ const spanishData = {
     }
   };
 
-
-  function buildSpanishPage() {
-    return `
-  ${printElement("h2", spanishData.name, "text-center")}
-  <div class="row">
-    <section class="col-sm-4">
-      ${printList(spanishData.countriesSpoken, "Countries Spoken")}
-    </section>
-    <section class="col-sm-4">
-      ${printList(spanishData.notablePeople, "Notable Spanish Speakers")}
-    </section>
-    <section class="col-sm-4">
-      ${printFunFacts(spanishData)}
-    </section>
-  </div>
-  ${printTranslatorInput("spanish")}`;
-  }
-
+  // Add nav event listener
   document.querySelector("#spanish").addEventListener("click", function(){
-    document.querySelector("#language-container").innerHTML = buildSpanishPage()
+    document.querySelector("#language-container").innerHTML = buildLanguagePage(spanishData, "spanish")
   })
 
-  // Event handler for translation button
-document.querySelector("body").addEventListener("click", function() {
-  if (event.target.id === "spanish-submit") {
-    const input = document.querySelector("#spanish-input").value;
-    const translatedPhrase = spanishData.dictionary[input];
-    if (translatedPhrase) {
-      document.querySelector("#spanish-output").innerHTML = translatedPhrase;
-    } else {
-      document.querySelector("#spanish-output").innerHTML =
-        "Sorry, that phrase isn't in the dictionary";
-    }
-  }
-});

@@ -71,16 +71,4 @@ document.querySelector("#french").addEventListener("click", function(){
 })
 
 
-// Event handler for translation button
-document.querySelector("body").addEventListener("click", function() {
-  if (event.target.id === "french-submit") {
-    const input = document.querySelector("#french-input").value;
-    const translatedPhrase = frenchData.dictionary[input];
-    if (translatedPhrase) {
-      document.querySelector("#french-output").innerHTML = translatedPhrase;
-    } else {
-      document.querySelector("#french-output").innerHTML =
-        "Sorry, that phrase isn't in the dictionary";
-    }
-  }
-});
+
