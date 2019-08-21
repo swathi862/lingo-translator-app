@@ -2,6 +2,7 @@ const spanishData = {
     name: "Spanish",
     notablePeople: [
       "Antonio Banderas",
+      "John Cena",
       "Enrique Iglesias",
       "Rita Moreno",
       "Penelope Cruz"

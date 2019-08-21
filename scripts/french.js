@@ -4,6 +4,7 @@ const frenchData = {
     "Vincent Van Gogh",
     "Claude Monet",
     "Gustave Eiffel",
+    "John Cena",
     "Coco Chanel"
   ],
   funFacts: {
