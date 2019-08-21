@@ -19,11 +19,8 @@ You and your teammates have been hired to help us build the next DuoLingo, excep
 
 ## Instructions
 1. Each team member should choose a language and build that language's DOM components
-1. Each team member should write all of their code in the JavaScript file that matches the language they chose.
-        - For example, if you chose Hindi, you'd be writing all yoru code in `hindi.js`
-1. Use the language data in your JavaScript file. Your job is to print it to the DOM when the user clicks on the appropriate link in the nav bar.
-    - For example, when the user clicks on "Hindi" in the nav bar, _only_ the information about the Hindi language should print to the DOM
-    - If the user then clicks on "French" in the nav bar, the DOM component representing Hindi should disappear and be replaced by the DOM component representing French.
+1. Each team member should write all of their code in the JavaScript file that matches the language they chose. For example, if you chose Hindi, you'd be writing all yoru code in `hindi.js`
+1. Use the language data in your JavaScript file. Your job is to print it to the DOM when the user clicks on the appropriate link in the nav bar. For example, when the user clicks on "Hindi" in the nav bar, _only_ the information about the Hindi language should print to the DOM. If the user then clicks on "French" in the nav bar, the DOM component representing Hindi should disappear and be replaced by the DOM component representing French.
 1. You should plan on writing a seperate printer function for each property in your language object
 
 ## Stretch Goals
@@ -45,13 +42,3 @@ You and your teammates have been hired to help us build the next DuoLingo, excep
 
 #### 5. Translation API
 1. Instead of using the dictionary objects in your JavaScript files, use [this free translation API](https://tech.yandex.com/translate/) to translate any word or phrase into your given language. You'll need to use the the syntax from [this chapter](https://github.com/NewForce-at-Mountwest/client-side-mastery/blob/master/book-2-the-neophyte/chapters/FETCH_INTRO.md) to pull data from the API and display it to the DOM. 
-
-
-
-
-
-
-
-
-
-
