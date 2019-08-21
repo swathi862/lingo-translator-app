@@ -13,7 +13,7 @@ You and your teammates have been hired to help us build the next DuoLingo, excep
 ## MVP Definition (Minimum Viable Product)
 1. When a user clicks on a link in the nav bar, they should see that language's information displayed on the web page.
     - All of the information you need to display is stored in objects in your JavaScript files
-1. Language information should be displayed in a two, three, or four column layout. You can decide how many columns you want to use as a team. Your layout should be consistent across all pages. [You're welcome to use their grid system to help with your layout.](https://getbootstrap.com/docs/4.0/layout/grid/)
+1. Language information should be displayed in a two, three, or four column layout. You can decide how many columns you want to use as a team. Your layout should be consistent across all pages. We've installed Bootstrap for you-- [you're welcome to use their grid system to help with your layout.](https://getbootstrap.com/docs/4.0/layout/grid/)
 
 ![mock up layout](images/mockup.png)
 
