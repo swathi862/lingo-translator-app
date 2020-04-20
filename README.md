@@ -12,33 +12,28 @@ You and your teammates have been hired to help us build the next DuoLingo, excep
 
 ## MVP Definition (Minimum Viable Product)
 1. When a user clicks on a link in the nav bar, they should see that language's information displayed on the web page.
-    - All of the information you need to display is stored in objects in your JavaScript files
-1. Language information should be displayed in a two, three, or four column layout. You can decide how many columns you want to use as a team. Your layout should be consistent across all pages. We've installed Bootstrap for you-- [you're welcome to use their grid system to help with your layout.](https://getbootstrap.com/docs/4.0/layout/grid/)
+    - All of the information you need to display is stored in objects in your individual language JavaScript files
+2. Users should see a section at the bottom of each page for a translator. The section should have an text input and a button that says "Translate".
+3. When the user enters a phrase and clicks the "Translate" button, they should see either the translated phrase from the appropriate language's dictionary or, if the entered phrase is not in the dictionary, a helpful error message.
+4. Language information should be displayed in a two, three, or four column layout. You can decide how many columns you want to use as a team. Your layout should be consistent across all pages. We've installed Bootstrap for you-- [you're welcome to use their grid system to help with your layout](https://getbootstrap.com/docs/4.0/layout/grid/), or you can make your own.
 
 ![mock up layout](images/mockup.png)
 
+
 ## Instructions
-1. Each team member should choose a language and build that language's DOM components
-1. Each team member should write all of their code in the JavaScript file that matches the language they chose. For example, if you chose Hindi, you'd be writing all yoru code in `hindi.js`
+1. Each team member should choose a language.
 1. Use the language data in your JavaScript file. Your job is to print it to the DOM when the user clicks on the appropriate link in the nav bar. For example, when the user clicks on "Hindi" in the nav bar, _only_ the information about the Hindi language should print to the DOM. If the user then clicks on "French" in the nav bar, the DOM component representing Hindi should disappear and be replaced by the DOM component representing French.
-1. You should plan on writing a seperate printer function for each property in your language object
+1. As a team, decide what layout, basic styles and class names you want to use.
+1. You have a file called `domPrinter.js`. You should use this file to _define_, but not execute, single responsibility functions that build and return individual DOM components. As a team, you should attempt to evenly share the task of writing these DOM printer functions.
+    - Before you start writing printer functions, discuss what HTML elements you're going to need and divy up the work accordingly. For example, if almost everyone is going to need to use paragraph elements in their language page, only one person needs to write the function that returns a paragraph element and everyone else can use it.
+    - You should _execute_ these functions in your individual language files to print your language data to the DOM.
+
 
 ## Stretch Goals
-#### 1. Translator
-1. Add a section at the bottom of your page for a translator. The section should have an text input and a button that says "Translate".
-1. When the user enters a phrase and clicks the "Translate" button, they should see either the translated phrase from that language's dictionary or, if the entered phrase is not in the dictionary, a helpful error message.
-
-#### 2. Dynamic Buttons
-1. Refactor your JavaScript so that, instead of printing all of the information at once, you instead print buttons with each property's name. (For example, one button might say "Fun Facts" and another might say "Countries Spoken".)
-1. When a user clicks a button, the corresponding information should be displayed.
-
-#### 3. Add sound to your translator
-1. Add a "Play" button to your translator. When the user clicks the "Play" button, they should hear the translated phrase.
+#### Add sound to your translator
+1. Add a "Play" button to your translator. When the user clicks the "Play" button, they should hear the translated phrase with the appropriate accent.
     - Use the [Speech Synthesis API](https://flaviocopes.com/speech-synthesis-api/) that's built into your browser.
 
-#### 4. JOOOOOOOHN CEEEENAAAAAAA
-1. If John Cena is a notable speaker of your language, his name should be bold, uppercase, huge, and gold.
-1. When a user hovers over John Cena's name, they should hear "JOOOOOOOHN CEEEENAAAAAAA" play as an audio clip from the browser. Use the same Speech Synthesis API from step 3.
 
-#### 5. Translation API
-1. Instead of using the dictionary objects in your JavaScript files, use [this free translation API](https://tech.yandex.com/translate/) to translate any word or phrase into your given language. You'll need to use the the syntax from [this chapter](https://github.com/NewForce-at-Mountwest/client-side-mastery/blob/master/book-2-the-neophyte/chapters/FETCH_INTRO.md) to pull data from the API and display it to the DOM. 
+#### Translation API
+1. Instead of using the dictionary objects in your JavaScript files, use [this free translation API](https://tech.yandex.com/translate/) to translate any word or phrase into your given language. You'll need to use the the syntax from [this chapter](https://github.com/NewForce-at-Mountwest/client-side-mastery/blob/master/book-2-the-neophyte/chapters/FETCH_INTRO.md) to pull data from the API and display it to the DOM.
