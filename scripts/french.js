@@ -66,11 +66,8 @@ const frenchData = {
 
 // French click event
 document.querySelector("#french").addEventListener("click", function(){
-  // Header
-  document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
-
   // Printing the contents
-  document.querySelector("#language-container").innerHTML += languageContentsContainer("Countries Spoken", notablePeopleContainer(frenchData), "Fun Facts")
+  document.querySelector("#language-container").innerHTML = languageContentsContainer(frenchData.name, "French", "Countries Spoken", notablePeopleContainer(frenchData), "Fun Facts")
 
 })
 

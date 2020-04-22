@@ -5,28 +5,12 @@
 
 // For example, we can define a function here that prints an H1 element
 
-const h1 = (text, classNames) => {
-    return `<h1 class="${classNames}">${text}</h1>`
-}
+// const h1 = (text, classNames) => {
+//     return `<h1 class="${classNames}">${text}</h1>`
+// }
+
 
 // Go to french.js to see how we can execute this function
-// const languageContentsContainer = (countriesSpoken, notablePeople, funFacts) => {
-//     return `
-//     <div class="row align-items-start">
-//         <div class="col" id="countries-spoken">
-//             <h3>Countries Spoken</h3>
-//             <p>${countriesSpoken}</p>
-//         </div>
-//         <div class="col" id="notable-people">
-//             <h3>Notable People</h3>
-//             <p>${notablePeople}</p>
-//         </div>
-//         <div class="col" id="fun-facts">
-//             <h3>Fun Facts</h3>
-//             <p>${funFacts}</p>
-//         </div>
-//     </div>`
-// }
 
 // Notable people container
 function notablePeopleContainer(language){
@@ -44,8 +28,9 @@ function notablePeopleContainer(language){
 }
 
 
-const languageContentsContainer = (countriesSpoken, notablePeople, funFacts) => {
+const languageContentsContainer = (classNames, text, countriesSpoken, notablePeople, funFacts) => {
     return `
+    <h1 class="${classNames}">${text}</h1>
     <div class="row align-items-start">
         <div class="col" id="countries-spoken">
             <div>${countriesSpoken}</div>        
