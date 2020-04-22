@@ -13,9 +13,22 @@
 // Go to french.js to see how we can execute this function
 
 // Notable people container
+// function notablePeopleContainer(language){
+//     let notablePeoplehtmlString = `
+//      <h3>Notable People</h3>
+//     <ul>`
+    
+//     // Notable people loop
+//     for (let i = 0; i < language.notablePeople.length; i++) {
+//         notablePeoplehtmlString += `<li>${language.notablePeople[i]}</li>`;
+//       }
+//       notablePeoplehtmlString += `</ul>`;
+
+//     return notablePeoplehtmlString
+// }
+
 function notablePeopleContainer(language){
     let notablePeoplehtmlString = `
-    <h3>Notable People</h3>
     <ul>`
     
     // Notable people loop
@@ -28,20 +41,76 @@ function notablePeopleContainer(language){
 }
 
 
+
+// const languageContentsContainer = (classNames, text, countriesSpoken, notablePeople, funFacts) => {
+//     return `
+//     <div class="jumbotron jumbotron-fluid d-flex justify-content-center">
+//         <h1 class="${classNames}">${text}</h1>
+//     </div>
+//     <div class="row align-items-start">
+//         <div class="col" id="countries-spoken">
+//             <div>${countriesSpoken}</div>        
+//         </div>
+//         <div class="col" id="notable-people">
+//             <div>${notablePeople}</div> 
+//         </div>
+//         <div class="col" id="fun-facts">
+//             <div>${funFacts}</div>        
+//         </div>
+//     </div>`
+// }
+
 const languageContentsContainer = (classNames, text, countriesSpoken, notablePeople, funFacts) => {
     return `
-    <h1 class="${classNames}">${text}</h1>
-    <div class="row align-items-start">
-        <div class="col" id="countries-spoken">
-            <div>${countriesSpoken}</div>        
+    <div class="jumbotron jumbotron-fluid d-flex justify-content-center">
+        <h1 class="${classNames}">${text}</h1>
+    </div>
+
+    <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Countries Spoken
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+        ${countriesSpoken}
         </div>
-        <div class="col" id="notable-people">
-            <div>${notablePeople}</div> 
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Notable People
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+        ${notablePeople}        
         </div>
-        <div class="col" id="fun-facts">
-            <div>${funFacts}</div>        
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Fun Facts
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+        ${funFacts}        
         </div>
-    </div>`
+      </div>
+    </div>
+  </div>`
 }
 
 // -------------------- For reference! -----------------//
