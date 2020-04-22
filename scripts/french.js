@@ -50,7 +50,30 @@ const frenchData = {
 // Note: this will print on page load. You will need to refactor this code slightly so that it only prints when you click the "French" button on the nav bar
 
 // This line of code calls the h1 function defined in domPrinter.js and passes in the text (the name property in the above object) and a class name of "french-heading", which currently has no applied CSS so we won't see a difference
-document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
+
+// For loop functions
+
+// Notable people function
+
+// console.log(frenchData.notablePeople)
+
+// function notablePeopleLoop() {
+//   for (let i = 0; i < frenchData.notablePeople.length; i++) {
+//     let notablePerson = frenchData.notablePeople[i];
+
+//   }
+// }
+
+// French click event
+document.querySelector("#french").addEventListener("click", function(){
+  // Header
+  document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
+
+  // Printing the contents
+  document.querySelector("#language-container").innerHTML += languageContentsContainer("Countries Spoken", notablePeopleContainer(frenchData), "Fun Facts")
+
+})
+
 
 
 

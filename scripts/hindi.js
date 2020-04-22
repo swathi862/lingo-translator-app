@@ -57,3 +57,13 @@
     }
     }
   };
+
+  // French click event
+document.querySelector("#hindi").addEventListener("click", function(){
+  // Header
+  document.querySelector("#language-container").innerHTML = h1(hindiData.name, "french-heading")
+
+  // Printing the contents
+  document.querySelector("#language-container").innerHTML += languageContentsContainer("Countries Spoken", notablePeopleContainer(hindiData), "Fun Facts")
+
+})

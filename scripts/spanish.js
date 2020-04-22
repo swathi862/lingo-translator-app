@@ -47,3 +47,12 @@ const spanishData = {
     }
   };
 
+// Spanish click event
+document.querySelector("#spanish").addEventListener("click", function(){
+  // Header
+  document.querySelector("#language-container").innerHTML = h1(spanishData.name, "spanish-heading")
+
+  // Printing the contents
+  document.querySelector("#language-container").innerHTML += languageContentsContainer("Countries Spoken", notablePeopleContainer(spanishData), "Fun Facts")
+
+})

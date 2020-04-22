@@ -10,7 +10,54 @@ const h1 = (text, classNames) => {
 }
 
 // Go to french.js to see how we can execute this function
+// const languageContentsContainer = (countriesSpoken, notablePeople, funFacts) => {
+//     return `
+//     <div class="row align-items-start">
+//         <div class="col" id="countries-spoken">
+//             <h3>Countries Spoken</h3>
+//             <p>${countriesSpoken}</p>
+//         </div>
+//         <div class="col" id="notable-people">
+//             <h3>Notable People</h3>
+//             <p>${notablePeople}</p>
+//         </div>
+//         <div class="col" id="fun-facts">
+//             <h3>Fun Facts</h3>
+//             <p>${funFacts}</p>
+//         </div>
+//     </div>`
+// }
 
+// Notable people container
+function notablePeopleContainer(language){
+    let notablePeoplehtmlString = `
+    <h3>Notable People</h3>
+    <ul>`
+    
+    // Notable people loop
+    for (let i = 0; i < language.notablePeople.length; i++) {
+        notablePeoplehtmlString += `<li>${language.notablePeople[i]}</li>`;
+      }
+      notablePeoplehtmlString += `</ul>`;
+
+    return notablePeoplehtmlString
+}
+
+
+const languageContentsContainer = (countriesSpoken, notablePeople, funFacts) => {
+    return `
+    <div class="row align-items-start">
+        <div class="col" id="countries-spoken">
+            <div>${countriesSpoken}</div>        
+        </div>
+        <div class="col" id="notable-people">
+            <div>${notablePeople}</div> 
+        </div>
+        <div class="col" id="fun-facts">
+            <div>${funFacts}</div>        
+        </div>
+    </div>`
+}
 
 // -------------------- For reference! -----------------//
 
@@ -25,3 +72,4 @@ const h1 = (text, classNames) => {
 // }
 
 // const h1 = (text, classNames) => `<h1 class="${classNames}">${text}</h1>`
+

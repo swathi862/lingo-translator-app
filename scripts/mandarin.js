@@ -40,5 +40,14 @@ const mandarinData = {
   }
 
 
+  document.querySelector("#mandarin").addEventListener("click", function(){
+    // Header
+    document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
+  
+    // Printing the contents
+    document.querySelector("#language-container").innerHTML += languageContentsContainer("Countries Spoken", notablePeopleContainer(mandarinData), "Fun Facts")
+  
+  })
+  
 
 
