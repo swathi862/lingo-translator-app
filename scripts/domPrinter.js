@@ -73,7 +73,7 @@ function splashpageContainer(){
     `
 }
 
-
+// Notable People loop
 function notablePeopleContainer(language){
     let notablePeoplehtmlString = `
     <ul>`
@@ -86,6 +86,21 @@ function notablePeopleContainer(language){
 
     return notablePeoplehtmlString
 }
+
+//Countries Spoken loop
+function printCountriesSpoken (language){
+
+    let countriesSpokenContainer = `
+    <ul>`
+    
+    for (let i=0; i < language.countriesSpoken.length; i++){
+    //   const countriesSpoken = spanishData.countriesSpoken[i]
+      countriesSpokenContainer += `<li>${language.countriesSpoken[i]}</li>`
+    }
+    countriesSpokenContainer += `</ul>`
+    return countriesSpokenContainer
+    }
+    
 
 
 const languageContentsContainer = (classNames, text, countriesSpoken, notablePeople, funFacts) => {
@@ -140,7 +155,6 @@ const languageContentsContainer = (classNames, text, countriesSpoken, notablePeo
     </div>
   </div>`
 }
-
 // -------------------- For reference! -----------------//
 
 // Here are some other ways to right the exact same function we wrote above:

@@ -38,11 +38,19 @@ const mandarinData = {
       whatsYourName: " 你叫什么名字"
     }
   }
+ 
+  // document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
 
+  // const mandarinButton = document.querySelector("#mandarin")
+  // mandarinButton.addEventListener("click", function(){
+  // console.log("you clicked the mandarin button")
+  // document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
+  // document.querySelector("#language-container").innerHTML += printCountriesSpoken(mandarinData)
+  // })
 
   document.querySelector("#mandarin").addEventListener("click", function(){
     // Printing the contents
-    document.querySelector("#language-container").innerHTML = languageContentsContainer(mandarinData.name, "Mandarin", "Countries Spoken", notablePeopleContainer(mandarinData), "Fun Facts")
+    document.querySelector("#language-container").innerHTML = languageContentsContainer(mandarinData.name, "Mandarin", printCountriesSpoken(mandarinData), notablePeopleContainer(mandarinData), "Fun Facts")
   
   })
   
