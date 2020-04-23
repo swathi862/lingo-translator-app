@@ -66,25 +66,6 @@ document.querySelector("#hindi").addEventListener("click", function(){
   document.querySelector("#language-container").innerHTML = languageContentsContainer(hindiData.name, "Hindi", printCountriesSpoken(hindiData), notablePeopleContainer(hindiData), funFactsData(hindiData,""))
   // Translator print
   document.querySelector("#language-container").innerHTML += buildTranslatorContainer(hindiData.name.toLowerCase())
-  // Hindi translator
-  if (event.target.id === "translate-btn-hindi") {
-
-    const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
-
-    const translatedPhraseObject = hindiData.dictionary[translate()]
-
-    if(translatedPhraseObject !== undefined){
-      const translatedPhrase = translatedPhraseObject.englishPronunciation
-
-      document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
-
-      const translatedHTMLString = buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
-      textToSpeechFunction(translatedHTMLString)
-    }
-
-  }
-})  
-
 
 // Hindi translator click event
 document.querySelector("#language-container").addEventListener("click", function(){
@@ -97,6 +78,10 @@ document.querySelector("#language-container").addEventListener("click", function
     if (translatedPhraseObject !== undefined){
       const translatedPhrase = translatedPhraseObject.englishPronunciation
       document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+
+      textToSpeechFunction(hindiData.name, toBeTranslatedValue, translatedPhrase)
     }
-  }
+    }
+})
+
 })

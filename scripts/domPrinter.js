@@ -213,8 +213,30 @@ function buildTranslatedPhraseContainer (toBeTranslatedValue, translatedPhrase) 
         </div>`
 }
 
-function textToSpeechFunction (translatedString){
-    return`
-    const text = toString(translatedString)
-    console.log(text)`
+//Function for text to speech
+function textToSpeechFunction (languageName, toBeTranslatedValue, translatedPhrase){
+
+    let utterance = new SpeechSynthesisUtterance(`The phrase ${toBeTranslatedValue} translates to ${translatedPhrase}`)
+
+    if (languageName === "Hindi"){
+        utterance.lang = 'hi-IN'
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance)
+    }
+    else if (languageName === "French"){
+        utterance.lang = 'fr-FR'
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance)
+    }
+    else if (languageName === "Spanish"){
+        utterance.lang = 'es-ES'
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance)
+    }
+    else if (languageName === "Mandarin"){
+        utterance.lang = 'zh-CN'
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance)
+    }
+
 }
