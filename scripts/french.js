@@ -54,8 +54,8 @@ document.querySelector("#language-container").innerHTML = h1(frenchData.name, "f
 
 const frenchButton = document.querySelector("#french")
 frenchButton.addEventListener("click", function(){
-// console.log("you clicked the spanish button")
-document.querySelector("#language-container").innerHTML = h1(frenchData.name, "spanish-heading")
+// console.log("you clicked the french button")
+document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
 document.querySelector("#language-container").innerHTML += printCountriesSpoken(frenchData)
 })
 
