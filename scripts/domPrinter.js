@@ -92,7 +92,7 @@ function translate () {
   
         else{
           const translatedPhrase = "I'm sorry, the phrase you entered is not in our dictionary! Please, try another phrase :)"
-  
+          speechSynthesis.speak(new SpeechSynthesisUtterance(translatedPhrase))
           document.querySelector("#translator-container").innerHTML += `
           <p>${translatedPhrase}</p>`
         }
@@ -106,3 +106,9 @@ function buildTranslatedPhraseContainer (toBeTranslatedValue, translatedPhrase) 
             <p>The phrase <strong><em>${toBeTranslatedValue}</em></strong> translates to <strong><em>${translatedPhrase}</em></strong></p>
         </div>`
 }
+
+// function textToSpeechFunction (translatedString){
+//     return
+//     const text = `${translatedString}`.value
+//     console.log(text)
+// }
