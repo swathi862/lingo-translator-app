@@ -55,7 +55,7 @@ frenchButton.addEventListener("click", function(){
 // console.log("you clicked the french button")
 document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
 document.querySelector("#language-container").innerHTML += printCountriesSpoken(frenchData)
-document.querySelector("#language-container").innerHTML += buildTranslatorContainer()
+document.querySelector("#language-container").innerHTML += buildTranslatorContainer(frenchData.name.toLowerCase())
 })
 
 // document.querySelector("#french").addEventListener("click", () => {
@@ -64,7 +64,7 @@ document.querySelector("#language-container").innerHTML += buildTranslatorContai
 // })
 
 document.querySelector("#language-container").addEventListener("click", function(){
-  if(event.target.id === "translate-btn"){
+  if(event.target.id === "translate-btn-french"){
 
     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
 

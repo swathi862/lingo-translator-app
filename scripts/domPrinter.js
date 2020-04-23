@@ -38,13 +38,13 @@ return countriesSpokenContainer
 
 // const h1 = (text, classNames) => `<h1 class="${classNames}">${text}</h1>`
 
-function buildTranslatorContainer () {
+function buildTranslatorContainer (languageName) {
     return`
     <footer class = "page-footer font-small blue pt-4">
     <div class = "row">
         <div class = "col-sm" id = "translator-container">
             <input id = "text-area" type= "text" placeholder= "Enter text">
-            <button id= "translate-btn" class="btn btn-primary auto">Translate</button>
+            <button id= "translate-btn-${languageName}" class="btn btn-primary auto">Translate</button>
         </div>
     </div>
     </footer>`

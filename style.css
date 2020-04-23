@@ -15,15 +15,13 @@ header{
 
 #translator-container{
     width: 70vw;
-    border: 1px solid black;
     margin: auto;
     text-align: center;
 }
 
 #phrase-container{
-    width: 70vw;
-    border: 1px solid black;
     margin: auto;
+    justify-content: center;
     text-align: center;
 }
 

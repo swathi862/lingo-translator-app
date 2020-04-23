@@ -52,7 +52,7 @@ const spanishData = {
   // console.log("you clicked the spanish button")
   document.querySelector("#language-container").innerHTML = h1(spanishData.name, "spanish-heading")
   document.querySelector("#language-container").innerHTML += printCountriesSpoken(spanishData)
-  document.querySelector("#language-container").innerHTML += buildTranslatorContainer()
+  document.querySelector("#language-container").innerHTML += buildTranslatorContainer(spanishData.name.toLowerCase())
   })
 
   // document.querySelector("#spanish").addEventListener("click", () => {
@@ -61,7 +61,7 @@ const spanishData = {
   // })
 
 document.querySelector("#language-container").addEventListener("click", function(){
-  if(event.target.id === "translate-btn"){
+  if(event.target.id === "translate-btn-spanish"){
 
     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
 

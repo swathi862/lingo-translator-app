@@ -1,6 +1,6 @@
 
 const hindiData = {
-  name: "Hindi  ",
+  name: "Hindi",
   notablePeople: [
     "Nelly Furtado",
     "John Cena",
@@ -60,10 +60,10 @@ const hindiData = {
 };
 const hindiButton = document.querySelector("#hindi")
 hindiButton.addEventListener("click", function(){
-// console.log("you clicked the hindi button")
-document.querySelector("#language-container").innerHTML = h1(hindiData.name, "hindi-heading")
-document.querySelector("#language-container").innerHTML += printCountriesSpoken(hindiData)
-document.querySelector("#language-container").innerHTML += buildTranslatorContainer()
+    // console.log("you clicked the hindi button")
+    document.querySelector("#language-container").innerHTML = h1(hindiData.name, "hindi-heading")
+    document.querySelector("#language-container").innerHTML += printCountriesSpoken(hindiData)
+    document.querySelector("#language-container").innerHTML += buildTranslatorContainer(hindiData.name.toLowerCase())
 })
 
 // document.querySelector("#hindi").addEventListener("click", () => {
@@ -74,7 +74,7 @@ document.querySelector("#language-container").innerHTML += buildTranslatorContai
 
 document.querySelector("#language-container").addEventListener("click", function () {
   
-  if (event.target.id === "translate-btn") {
+  if (event.target.id === "translate-btn-hindi") {
     
     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
 
