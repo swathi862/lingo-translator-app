@@ -27,21 +27,6 @@
 //     return notablePeoplehtmlString
 // }
 
-function notablePeopleContainer(language){
-    let notablePeoplehtmlString = `
-    <ul>`
-    
-    // Notable people loop
-    for (let i = 0; i < language.notablePeople.length; i++) {
-        notablePeoplehtmlString += `<li>${language.notablePeople[i]}</li>`;
-      }
-      notablePeoplehtmlString += `</ul>`;
-
-    return notablePeoplehtmlString
-}
-
-
-
 // const languageContentsContainer = (classNames, text, countriesSpoken, notablePeople, funFacts) => {
 //     return `
 //     <div class="jumbotron jumbotron-fluid d-flex justify-content-center">
@@ -60,10 +45,53 @@ function notablePeopleContainer(language){
 //     </div>`
 // }
 
+function splashpageContainer(){
+    return `
+    <div class="card" style="width: 32rem">
+    <div class="card-body" style="width: 30rem">
+    <form class="p-4">
+        <div class="form-group">
+            <label for="exampleDropdownFormEmail2">Email address</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleDropdownFormPassword2">Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                <label class="form-check-label" for="dropdownCheck2">
+                Remember me
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn">Sign in</button>
+    </form>
+    </div>
+  </div>
+    `
+}
+
+
+function notablePeopleContainer(language){
+    let notablePeoplehtmlString = `
+    <ul>`
+    
+    // Notable people loop
+    for (let i = 0; i < language.notablePeople.length; i++) {
+        notablePeoplehtmlString += `<li>${language.notablePeople[i]}</li>`;
+      }
+      notablePeoplehtmlString += `</ul>`;
+
+    return notablePeoplehtmlString
+}
+
+
 const languageContentsContainer = (classNames, text, countriesSpoken, notablePeople, funFacts) => {
     return `
-    <div class="jumbotron jumbotron-fluid d-flex justify-content-center">
-        <h1 class="${classNames}">${text}</h1>
+    <div class="jumbotron d-flex justify-content-center h-25 d-inline-block">
+        <h1 class="${classNames}" >${text}</h1>
     </div>
 
     <div class="accordion" id="accordionExample">

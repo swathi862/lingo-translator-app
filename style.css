@@ -1,0 +1,23 @@
+.card {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: rgb(95, 95, 95);
+}
+
+.btn {
+    color: rgb(95, 95, 95);
+
+}
+
+.submit-btn {
+    color: white;
+}
+
+.jumbotron {
+    padding: 1rem 1rem;
+    color: rgb(243, 243, 243);
+    background-color: rgb(158, 158, 158);
+}

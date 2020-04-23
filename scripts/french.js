@@ -71,7 +71,7 @@ document.querySelector("#french").addEventListener("click", function(){
 
 })
 
-
-
-
-
+document.querySelector(".navbar-brand").addEventListener("click", function(){
+  document.querySelector("#language-container").classList.remove("container")
+  document.querySelector("#language-container").innerHTML = splashpageContainer()
+})
