@@ -25,3 +25,59 @@ const h1 = (text, classNames) => {
 // }
 
 // const h1 = (text, classNames) => `<h1 class="${classNames}">${text}</h1>`
+
+function buildTranslatorContainer () {
+    return`
+    <footer class = "page-footer font-small blue pt-4">
+    <div class = "row">
+        <div class = "col-sm" id = "translator-container">
+            <input id = "text-area" type= "text" placeholder= "Enter text">
+            <button id= "translate-btn" class="btn btn-primary auto">Translate</button>
+        </div>
+    </div>
+    </footer>`
+}
+
+function buildTranslatedPhraseContainer (toBeTranslatedValue, translatedPhrase) {
+    return`
+    <div id = "phrase-container" class = "row">
+        <p>The phrase <strong><em>${toBeTranslatedValue}</em></strong> translates to <strong><em>${translatedPhrase}</em></strong></p>
+    </div>`
+}
+
+function translate () {
+    let phraseToLookUp;
+
+    const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+
+        if (toBeTranslatedValue === "hello" || toBeTranslatedValue === "hi"){
+          return phraseToLookUp = "hello"
+        }
+  
+        else if (toBeTranslatedValue.includes("bye")){
+          return phraseToLookUp = "goodbye"
+        }
+  
+        else if (toBeTranslatedValue.includes("thank")){
+          return phraseToLookUp = "thankYou"
+        }
+  
+        else if (toBeTranslatedValue.includes("evening")){
+          return phraseToLookUp = "goodEvening"
+        }
+  
+        else if (toBeTranslatedValue.includes("how") && toBeTranslatedValue.includes("are") && toBeTranslatedValue.includes("you")){
+          return phraseToLookUp = "howAreYou"
+        }
+  
+        else if (toBeTranslatedValue.includes("what") && toBeTranslatedValue.includes("your") && toBeTranslatedValue.includes("name")){
+          return phraseToLookUp = "whatsYourName"
+        }
+  
+        else{
+          const translatedPhrase = "I'm sorry, the phrase you entered is not in our dictionary! Please, try another phrase :)"
+  
+          document.querySelector("#translator-container").innerHTML += `
+          <p>${translatedPhrase}</p>`
+        }
+}

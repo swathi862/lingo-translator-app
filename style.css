@@ -1,0 +1,29 @@
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header{
+    width: auto;
+    height: 35vh;
+    font-size: xx-large;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: silver;
+}
+
+#translator-container{
+    width: 70vw;
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+}
+
+#phrase-container{
+    width: 70vw;
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+}
+

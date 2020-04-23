@@ -39,6 +39,21 @@ const mandarinData = {
     }
   }
 
+  document.querySelector("#mandarin").addEventListener("click", () => {
+    document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
+    document.querySelector("#language-container").innerHTML += buildTranslatorContainer()
+  })
+  
+  document.querySelector("#language-container").addEventListener("click", function(){
+    if(event.target.id === "translate-btn"){
+      console.log(mandarinData.dictionary)
+      const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+  
+      const translatedPhrase = mandarinData.dictionary[translate()]
+  
+      document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+    }
+  })
 
 
 
