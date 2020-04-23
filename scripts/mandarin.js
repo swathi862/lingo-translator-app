@@ -38,13 +38,23 @@ const mandarinData = {
       whatsYourName: " 你叫什么名字"
     }
   }
-
-  document.querySelector("#mandarin").addEventListener("click", () => {
-    document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
-    document.querySelector("#language-container").innerHTML += buildTranslatorContainer()
+ 
+  const mandarinButton = document.querySelector("#mandarin")
+  mandarinButton.addEventListener("click", function(){
+  // console.log("you clicked the mandarin button")
+  document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
+  document.querySelector("#language-container").innerHTML += printCountriesSpoken(mandarinData)
+  document.querySelector("#language-container").innerHTML += buildTranslatorContainer()
   })
+
+
+  // document.querySelector("#mandarin").addEventListener("click", () => {
+  //   document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
+  //   document.querySelector("#language-container").innerHTML += buildTranslatorContainer()
+  // })
   
   document.querySelector("#language-container").addEventListener("click", function(){
+    console.log("You are in the translator part")
     if(event.target.id === "translate-btn"){
       console.log(mandarinData.dictionary)
       const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
