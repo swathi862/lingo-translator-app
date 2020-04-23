@@ -39,27 +39,39 @@ const mandarinData = {
     }
   }
  
-  const mandarinButton = document.querySelector("#mandarin")
-  mandarinButton.addEventListener("click", function(){
-    document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
-    document.querySelector("#language-container").innerHTML += printCountriesSpoken(mandarinData)
-    document.querySelector("#language-container").innerHTML += funFactsData(mandarinData)
-    document.querySelector("#language-container").innerHTML +=  `<h4>Dialect Info</h4>
-                                                                <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
-                                                                <h4>Chinese Dialects</h4>
-                                                                <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>`
+  // Mandarin Info click event
+  document.querySelector("#mandarin").addEventListener("click", function(){
+    // console.log("You clicked mandarin")
+    
+    // Printing the contents
+    document.querySelector("#language-container").innerHTML = languageContentsContainer(mandarinData.name, "Mandarin", printCountriesSpoken(mandarinData), notablePeopleContainer(mandarinData), funFactsData(mandarinData, mandarinFunFactsData()))
+    // Translator print
     document.querySelector("#language-container").innerHTML += buildTranslatorContainer(mandarinData.name.toLowerCase())
+    // mandarin translator
+    if(event.target.id === "translate-btn-mandarin"){
+  
+      const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+  
+      const translatedPhrase = mandarinData.dictionary[translate()]
+      
+      if (translatedPhrase !== undefined){
+        document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+      }
+    }
+    
   })
   
+  // Mandarin translator click event
   document.querySelector("#language-container").addEventListener("click", function(){
     if(event.target.id === "translate-btn-mandarin"){
-
+  
       const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
-      
+  
       const translatedPhrase = mandarinData.dictionary[translate()]
-
+  
       if (translatedPhrase !== undefined){
         document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
       }
     }
   })
+
