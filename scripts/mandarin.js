@@ -38,7 +38,15 @@ const mandarinData = {
       whatsYourName: " 你叫什么名字"
     }
   }
+ 
+  document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
 
+  const mandarinButton = document.querySelector("#mandarin")
+  mandarinButton.addEventListener("click", function(){
+  // console.log("you clicked the mandarin button")
+  document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
+  document.querySelector("#language-container").innerHTML += printCountriesSpoken(mandarinData)
+  })
 
 
 
