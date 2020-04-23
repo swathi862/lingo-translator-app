@@ -44,23 +44,77 @@ const mandarinData = {
   // Mandarin click event
   document.querySelector("#mandarin").addEventListener("click", function(){
     // Printing the contents
-    document.querySelector("#language-container").innerHTML = languageContentsContainer(mandarinData.name, "Mandarin", printCountriesSpoken(mandarinData), notablePeopleContainer(mandarinData), funFactsData(mandarinData))
-  
+    const pageContentContainer = document.querySelector("#language-container")
+    pageContentContainer.innerHTML = languageContentsContainer(mandarinData.name, "Mandarin", printCountriesSpoken(mandarinData), notablePeopleContainer(mandarinData), funFactsData(mandarinData))
+    
+    // Mandarin 
+    pageContentContainer.innerHTML += mandarinFunFactsData()
+
   })
 
 
-  document.querySelector("#mandarin").addEventListener("click", function(){
-    const pageContentContainer = document.querySelector("#language-container");
-    pageContentContainer.innerHTML = h1(mandarinData.name, "mandarin-heading")  
-  pageContentContainer.innerHTML += funFactsData(mandarinData)
-  pageContentContainer.innerHTML += 
-  `<h4>Dialect Info</h4>
-  <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
-  <h4>Chinese Dialects</h4>
-  <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>`
-})
   
   
   
+  const mandarinButton = document.querySelector("#mandarin")
+  mandarinButton.addEventListener("click", function(){
+    document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
+    document.querySelector("#language-container").innerHTML += printCountriesSpoken(mandarinData)
+    document.querySelector("#language-container").innerHTML += funFactsData(mandarinData)
+    document.querySelector("#language-container").innerHTML +=  `<h4>Dialect Info</h4>
+                                                                <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
+                                                                <h4>Chinese Dialects</h4>
+                                                                <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>`
+    document.querySelector("#language-container").innerHTML += buildTranslatorContainer(mandarinData.name.toLowerCase())
+  })
+  
+  document.querySelector("#language-container").addEventListener("click", function(){
+    if(event.target.id === "translate-btn-mandarin"){
 
+      const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+      
+      const translatedPhrase = mandarinData.dictionary[translate()]
 
+      if (translatedPhrase !== undefined){
+        document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+      }
+    }
+  })
+
+//   document.querySelector("#mandarin").addEventListener("click", function(){
+//     const pageContentContainer = document.querySelector("#language-container");
+//     pageContentContainer.innerHTML = h1(mandarinData.name, "mandarin-heading")  
+//   pageContentContainer.innerHTML += funFactsData(mandarinData)
+//   pageContentContainer.innerHTML += 
+//   `<h4>Dialect Info</h4>
+//   <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
+//   <h4>Chinese Dialects</h4>
+//   <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>`
+// })
+  
+  
+  
+//   const mandarinButton = document.querySelector("#mandarin")
+//   mandarinButton.addEventListener("click", function(){
+//     document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
+//     document.querySelector("#language-container").innerHTML += printCountriesSpoken(mandarinData)
+//     document.querySelector("#language-container").innerHTML += funFactsData(mandarinData)
+//     document.querySelector("#language-container").innerHTML +=  `<h4>Dialect Info</h4>
+//                                                                 <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
+//                                                                 <h4>Chinese Dialects</h4>
+//                                                                 <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>`
+//     document.querySelector("#language-container").innerHTML += buildTranslatorContainer(mandarinData.name.toLowerCase())
+//   })
+  
+//   document.querySelector("#language-container").addEventListener("click", function(){
+//     if(event.target.id === "translate-btn-mandarin"){
+
+//       const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+      
+//       const translatedPhrase = mandarinData.dictionary[translate()]
+
+//       if (translatedPhrase !== undefined){
+//         document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+//       }
+//     }
+//   })

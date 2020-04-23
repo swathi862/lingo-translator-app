@@ -51,12 +51,39 @@ const frenchData = {
 document.querySelector("#french").addEventListener("click", function(){
   // Printing the contents
   document.querySelector("#language-container").innerHTML = languageContentsContainer(frenchData.name, "French", printCountriesSpoken(frenchData), notablePeopleContainer(frenchData), funFactsData(frenchData))
+}
 
-})
+// const frenchButton = document.querySelector("#french")
+// frenchButton.addEventListener("click", function(){
+//     document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
+//     document.querySelector("#language-container").innerHTML += printCountriesSpoken(frenchData)
+//     document.querySelector("#language-container").innerHTML += funFactsData(frenchData)
+//     document.querySelector("#language-container").innerHTML += buildTranslatorContainer(frenchData.name.toLowerCase())
+// })
 
-// Navbar Home button click event
-document.querySelector(".navbar-brand").addEventListener("click", function(){
-  document.querySelector("#language-container").classList.remove("container")
-  document.querySelector("#language-container").innerHTML = splashpageContainer()
-})
+// document.querySelector("#language-container").addEventListener("click", function(){
+//   if(event.target.id === "translate-btn-french"){
 
+//     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+
+//     const translatedPhrase = frenchData.dictionary[translate()]
+    
+//     if (translatedPhrase !== undefined){
+//       document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+//     }
+//   }
+// })
+
+// // Navbar Home button click event
+// document.querySelector(".navbar-brand").addEventListener("click", function(){
+//   document.querySelector("#language-container").classList.remove("container")
+//   document.querySelector("#language-container").innerHTML = splashpageContainer()
+// })
+
+// const frenchButton = document.querySelector("#french")
+// frenchButton.addEventListener("click", function(){
+//     document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
+//     document.querySelector("#language-container").innerHTML += printCountriesSpoken(frenchData)
+//     document.querySelector("#language-container").innerHTML += funFactsData(frenchData)
+//     document.querySelector("#language-container").innerHTML += buildTranslatorContainer(frenchData.name.toLowerCase())
+// })

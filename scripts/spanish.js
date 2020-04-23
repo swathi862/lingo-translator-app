@@ -52,4 +52,24 @@ document.querySelector("#spanish").addEventListener("click", function(){
   // Printing the contents
   document.querySelector("#language-container").innerHTML = languageContentsContainer(spanishData.name, "Spanish", printCountriesSpoken(spanishData), notablePeopleContainer(spanishData), funFactsData(spanishData))
 
+}
+  const spanishButton = document.querySelector("#spanish")
+  spanishButton.addEventListener("click", function(){
+      document.querySelector("#language-container").innerHTML = h1(spanishData.name, "spanish-heading")
+      document.querySelector("#language-container").innerHTML += printCountriesSpoken(spanishData)
+      document.querySelector("#language-container").innerHTML += funFactsData(spanishData)
+      document.querySelector("#language-container").innerHTML += buildTranslatorContainer(spanishData.name.toLowerCase())
+  })
+
+document.querySelector("#language-container").addEventListener("click", function(){
+  if(event.target.id === "translate-btn-spanish"){
+
+    const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+
+    const translatedPhrase = spanishData.dictionary[translate()]
+
+    if (translatedPhrase !== undefined){
+      document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+    }
+  }
 })

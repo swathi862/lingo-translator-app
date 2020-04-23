@@ -21,3 +21,31 @@ a {
     color: rgb(243, 243, 243);
     background-color: rgb(158, 158, 158);
 }
+
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header{
+    width: auto;
+    height: 35vh;
+    font-size: xx-large;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: silver;
+}
+
+#translator-container{
+    width: 70vw;
+    margin: auto;
+    text-align: center;
+}
+
+#phrase-container{
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+}
+
