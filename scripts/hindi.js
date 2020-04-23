@@ -60,31 +60,25 @@ const hindiData = {
 };
 const hindiButton = document.querySelector("#hindi")
 hindiButton.addEventListener("click", function(){
-    // console.log("you clicked the hindi button")
     document.querySelector("#language-container").innerHTML = h1(hindiData.name, "hindi-heading")
     document.querySelector("#language-container").innerHTML += printCountriesSpoken(hindiData)
+    document.querySelector("#language-container").innerHTML += funFactsData(hindiData)
     document.querySelector("#language-container").innerHTML += buildTranslatorContainer(hindiData.name.toLowerCase())
 })
 
-// document.querySelector("#hindi").addEventListener("click", () => {
-//   console.log("You clicked on the Hindi link in the nav bar")
-//   document.querySelector("#language-container").innerHTML = h1(hindiData.name, "hindi-heading")
-//   document.querySelector("#language-container").innerHTML += buildTranslatorContainer()
-// })
 
 document.querySelector("#language-container").addEventListener("click", function () {
-  
   if (event.target.id === "translate-btn-hindi") {
     
     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
 
     const translatedPhraseObject = hindiData.dictionary[translate()]
 
-    const translatedPhrase = translatedPhraseObject.englishPronunciation
+    if(translatedPhraseObject !== undefined){
+      const translatedPhrase = translatedPhraseObject.englishPronunciation
 
-    document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+      document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+    }
+    
   }
 })
-
-
-

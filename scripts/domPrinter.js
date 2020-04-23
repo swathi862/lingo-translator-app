@@ -1,43 +1,52 @@
-// The purpose of this file is to define functions that will return individual HTML components
 
-// You should not call any of these functions in this file. Instead, you should call them in the individual file for your language (e.g. hindi.js)
-
-
-// For example, we can define a function here that prints an H1 element
-
-const h1 = (text, classNames) => {
+//Function for printing Langauge Name h1 element
+function h1(text, classNames) {
     return `<h1 class="${classNames}">${text}</h1>`
 }
 
-// Go to french.js to see how we can execute this function
 
-//spanish countries spoken loop
+//Function for printing 'Fun Facts' section to page
+function funFactsData(languageObject){
+    let funFactString = `
+    <div>
+    <h2>Fun Facts</h2>
+    <h4>Related Languages</h4><ul>`
+
+    if(languageObject.name === "Hindi"){
+        funFactString += `<li>${languageObject.funFacts.relatedLanguages}</li>`
+    }
+
+    else{
+        for(i = 0; i < languageObject.funFacts.relatedLanguages.length; i++){
+            funFactString += `<li>${languageObject.funFacts.relatedLanguages[i]}</li>`
+            }
+    }
+
+    funFactString += `</ul><h4>Letters in the Alphabet</h4>
+    <p>${languageObject.funFacts.lettersInAlphabet}</p>
+    <h4>Number of Speakers</h4>
+    <p>${languageObject.funFacts.numberOfSpeakers}</p>
+    </div>`
+
+    return funFactString
+}
+
+
+//Function for printing 'Countries Spoken' section to page
 function printCountriesSpoken (language){
 
 let countriesSpokenContainer = `<h3>Countries Spoken</h3>
 <ul>`
 
 for (let i=0; i < language.countriesSpoken.length; i++){
-//   const countriesSpoken = spanishData.countriesSpoken[i]
   countriesSpokenContainer += `<li>${language.countriesSpoken[i]}</li>`
 }
 countriesSpokenContainer += `</ul>`
 return countriesSpokenContainer
 }
-// -------------------- For reference! -----------------//
 
-// Here are some other ways to right the exact same function we wrote above:
 
-// function h1(text, classNames){
-//     return `<h1 class="${classNames}">${text}</h1>`
-// }
-
-// const h1 = function(text, classNames){
-//     return `<h1 class="${classNames}">${text}</h1>`
-// }
-
-// const h1 = (text, classNames) => `<h1 class="${classNames}">${text}</h1>`
-
+//Function for building translator container (user input with button)
 function buildTranslatorContainer (languageName) {
     return`
     <footer class = "page-footer font-small blue pt-4">
@@ -50,23 +59,8 @@ function buildTranslatorContainer (languageName) {
     </footer>`
 }
 
-function buildTranslatedPhraseContainer (toBeTranslatedValue, translatedPhrase) {
-    if (translatedPhrase === "undefined")
-    {
-        const translatedPhrase = "I'm sorry, the phrase you entered is not in our dictionary! Please, try another phrase :)"
-  
-        document.querySelector("#translator-container").innerHTML += `
-        <p>${translatedPhrase}</p>`
-    }
-    
-    else{
-        return`
-        <div id = "phrase-container" class = "row">
-            <p>The phrase <strong><em>${toBeTranslatedValue}</em></strong> translates to <strong><em>${translatedPhrase}</em></strong></p>
-        </div>`
-    }
-}
 
+//Function that matches a phrase entered through user input to a key from the language's dictionary; returns that key
 function translate () {
     let phraseToLookUp;
 
@@ -102,4 +96,13 @@ function translate () {
           document.querySelector("#translator-container").innerHTML += `
           <p>${translatedPhrase}</p>`
         }
+}
+
+
+//Function for building translated phrase container
+function buildTranslatedPhraseContainer (toBeTranslatedValue, translatedPhrase) {
+    return`
+        <div id = "phrase-container" class = "row">
+            <p>The phrase <strong><em>${toBeTranslatedValue}</em></strong> translates to <strong><em>${translatedPhrase}</em></strong></p>
+        </div>`
 }

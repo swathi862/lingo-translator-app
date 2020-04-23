@@ -47,21 +47,14 @@ const frenchData = {
   }
 };
 
-// Note: this will print on page load. You will need to refactor this code slightly so that it only prints when you click the "French" button on the nav bar
 
-// This line of code calls the h1 function defined in domPrinter.js and passes in the text (the name property in the above object) and a class name of "french-heading", which currently has no applied CSS so we won't see a difference
 const frenchButton = document.querySelector("#french")
 frenchButton.addEventListener("click", function(){
-// console.log("you clicked the french button")
-document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
-document.querySelector("#language-container").innerHTML += printCountriesSpoken(frenchData)
-document.querySelector("#language-container").innerHTML += buildTranslatorContainer(frenchData.name.toLowerCase())
+    document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
+    document.querySelector("#language-container").innerHTML += printCountriesSpoken(frenchData)
+    document.querySelector("#language-container").innerHTML += funFactsData(frenchData)
+    document.querySelector("#language-container").innerHTML += buildTranslatorContainer(frenchData.name.toLowerCase())
 })
-
-// document.querySelector("#french").addEventListener("click", () => {
-//   document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
-//   document.querySelector("#language-container").innerHTML += buildTranslatorContainer()
-// })
 
 document.querySelector("#language-container").addEventListener("click", function(){
   if(event.target.id === "translate-btn-french"){
@@ -69,8 +62,10 @@ document.querySelector("#language-container").addEventListener("click", function
     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
 
     const translatedPhrase = frenchData.dictionary[translate()]
-
-    document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+    
+    if (translatedPhrase !== undefined){
+      document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+    }
   }
 })
 

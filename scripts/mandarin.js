@@ -41,29 +41,25 @@ const mandarinData = {
  
   const mandarinButton = document.querySelector("#mandarin")
   mandarinButton.addEventListener("click", function(){
-  // console.log("you clicked the mandarin button")
-  document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
-  document.querySelector("#language-container").innerHTML += printCountriesSpoken(mandarinData)
-  document.querySelector("#language-container").innerHTML += buildTranslatorContainer(mandarinData.name.toLowerCase())
+    document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
+    document.querySelector("#language-container").innerHTML += printCountriesSpoken(mandarinData)
+    document.querySelector("#language-container").innerHTML += funFactsData(mandarinData)
+    document.querySelector("#language-container").innerHTML +=  `<h4>Dialect Info</h4>
+                                                                <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
+                                                                <h4>Chinese Dialects</h4>
+                                                                <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>`
+    document.querySelector("#language-container").innerHTML += buildTranslatorContainer(mandarinData.name.toLowerCase())
   })
-
-
-  // document.querySelector("#mandarin").addEventListener("click", () => {
-  //   document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
-  //   document.querySelector("#language-container").innerHTML += buildTranslatorContainer()
-  // })
   
   document.querySelector("#language-container").addEventListener("click", function(){
-
     if(event.target.id === "translate-btn-mandarin"){
 
       const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
       
       const translatedPhrase = mandarinData.dictionary[translate()]
-  
-      document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+
+      if (translatedPhrase !== undefined){
+        document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+      }
     }
   })
-
-
-
