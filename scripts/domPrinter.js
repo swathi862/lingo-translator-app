@@ -1,54 +1,3 @@
-// The purpose of this file is to define functions that will return individual HTML components
-
-// You should not call any of these functions in this file. Instead, you should call them in the individual file for your language (e.g. hindi.js)
-
-
-// For example, we can define a function here that prints an H1 element
-
-// const h1 = (text, classNames) => {
-//     return `<h1 class="${classNames}">${text}</h1>`
-// }
-
-
-
-
-
-
-
-// Go to french.js to see how we can execute this function
-
-// Notable people container
-// function notablePeopleContainer(language){
-//     let notablePeoplehtmlString = `
-//      <h3>Notable People</h3>
-//     <ul>`
-    
-//     // Notable people loop
-//     for (let i = 0; i < language.notablePeople.length; i++) {
-//         notablePeoplehtmlString += `<li>${language.notablePeople[i]}</li>`;
-//       }
-//       notablePeoplehtmlString += `</ul>`;
-
-//     return notablePeoplehtmlString
-// }
-
-// const languageContentsContainer = (classNames, text, countriesSpoken, notablePeople, funFacts) => {
-//     return `
-//     <div class="jumbotron jumbotron-fluid d-flex justify-content-center">
-//         <h1 class="${classNames}">${text}</h1>
-//     </div>
-//     <div class="row align-items-start">
-//         <div class="col" id="countries-spoken">
-//             <div>${countriesSpoken}</div>        
-//         </div>
-//         <div class="col" id="notable-people">
-//             <div>${notablePeople}</div> 
-//         </div>
-//         <div class="col" id="fun-facts">
-//             <div>${funFacts}</div>        
-//         </div>
-//     </div>`
-// }
 
 function splashpageContainer(){
     return `
@@ -112,7 +61,7 @@ function funFactsData(languageObject){
     <div>
     <h4>Related Languages</h4><ul>`
 
-    
+
 
     for(i = 0; i < languageObject.funFacts.relatedLanguages.length; i++){
     funFactString += `<li>${languageObject.funFacts.relatedLanguages[i]}</li>`
@@ -195,19 +144,3 @@ const languageContentsContainer = (classNames, text, countriesSpoken, notablePeo
 // }
 
 // const h1 = (text, classNames) => `<h1 class="${classNames}">${text}</h1>`
-
-
-
-
-// function funFactsData(languageObject){
-//     for(i = 0; i < languageObject.funFacts.relatedLanguages.length; i++)
-//     return  `<div>
-//     <h2>Fun Facts</h2>
-//     <h4>Related Languages</h4>
-//     <li>${languageObject.funFacts.relatedLanguages[0]}, ${languageObject.funFacts.relatedLanguages[1]}</li>
-//     <h4>Letters in the Alphabet</h4>
-//     <li>${languageObject.funFacts.lettersInAlphabet}</li>
-//     <h4>Number of Speakers</h4>
-//     <li>${languageObject.funFacts.numberOfSpeakers}</li>
-//     </div>`
-// }

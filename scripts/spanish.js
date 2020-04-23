@@ -46,13 +46,6 @@ const spanishData = {
       whatsYourName: "cuál es tu nombre?"
     }
   };
-//constant and function to click the spanish button on the navigation bar.
-  // const spanishButton = document.querySelector("#spanish")
-  // spanishButton.addEventListener("click", function(){
-  // // console.log("you clicked the spanish button")
-  // document.querySelector("#language-container").innerHTML = h1(spanishData.name, "spanish-heading")
-  // document.querySelector("#language-container").innerHTML += printCountriesSpoken(spanishData)
-  // })
 
 // Spanish click event
 document.querySelector("#spanish").addEventListener("click", function(){
