@@ -61,14 +61,12 @@ const hindiData = {
 
 
   // hindi Info click event
-document.querySelector("#hindi").addEventListener("click", function(){
-  // console.log("You clicked hindi")
-  
+document.querySelector("#hindi").addEventListener("click", function(){  
   // Printing the contents
-  document.querySelector("#language-container").innerHTML = languageContentsContainer(hindiData.name, "Hindi", printCountriesSpoken(hindiData), notablePeopleContainer(hindiData), funFactsData(hindiData))
+  document.querySelector("#language-container").innerHTML = languageContentsContainer(hindiData.name, "Hindi", printCountriesSpoken(hindiData), notablePeopleContainer(hindiData), funFactsData(hindiData,""))
   // Translator print
   document.querySelector("#language-container").innerHTML += buildTranslatorContainer(hindiData.name.toLowerCase())
-  // hindi translator
+  // Hindi translator
   if (event.target.id === "translate-btn-hindi") {
 
     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
@@ -85,7 +83,7 @@ document.querySelector("#hindi").addEventListener("click", function(){
 })  
 
 
-// hindi translator click event
+// Hindi translator click event
 document.querySelector("#language-container").addEventListener("click", function(){
   if(event.target.id === "translate-btn-hindi"){
 
@@ -99,67 +97,3 @@ document.querySelector("#language-container").addEventListener("click", function
     }
   }
 })
-
-
-
-//   // Hindi click event
-// document.querySelector("#hindi").addEventListener("click", function(){
-//   // Printing the contents
-//   document.querySelector("#language-container").innerHTML = languageContentsContainer(hindiData.name, "Hindi", printCountriesSpoken(hindiData), notablePeopleContainer(hindiData), funFactsData(hindiData))
-
-//   document.querySelector("#language-container").innerHTML = h1(hindiData.name, "hindi-heading")
-//   }
-
-
-// const hindiButton = document.querySelector("#hindi")
-// hindiButton.addEventListener("click", function(){
-//     document.querySelector("#language-container").innerHTML = h1(hindiData.name, "hindi-heading")
-//     document.querySelector("#language-container").innerHTML += printCountriesSpoken(hindiData)
-//     document.querySelector("#language-container").innerHTML += funFactsData(hindiData)
-//     document.querySelector("#language-container").innerHTML += buildTranslatorContainer(hindiData.name.toLowerCase())
-// })
-
-
-// document.querySelector("#language-container").addEventListener("click", function () {
-//   if (event.target.id === "translate-btn-hindi") {
-    
-//     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
-
-//     const translatedPhraseObject = hindiData.dictionary[translate()]
-
-//     if(translatedPhraseObject !== undefined){
-//       const translatedPhrase = translatedPhraseObject.englishPronunciation
-
-//       document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
-//     }
-    
-//   }
-// })
-
-// const hindiButton = document.querySelector("#hindi")
-// hindiButton.addEventListener("click", function(){
-// // console.log("you clicked the hindi button")
-// document.querySelector("#language-container").innerHTML = h1(hindiData.name, "hindi-heading")
-// document.querySelector("#language-container").innerHTML += printCountriesSpoken(hindiData)
-//     document.querySelector("#language-container").innerHTML = h1(hindiData.name, "hindi-heading")
-//     document.querySelector("#language-container").innerHTML += printCountriesSpoken(hindiData)
-//     document.querySelector("#language-container").innerHTML += funFactsData(hindiData)
-//     document.querySelector("#language-container").innerHTML += buildTranslatorContainer(hindiData.name.toLowerCase())
-// })
-
-
-// document.querySelector("#language-container").addEventListener("click", function () {
-//   if (event.target.id === "translate-btn-hindi") {
-
-//     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
-
-//     const translatedPhraseObject = hindiData.dictionary[translate()]
-
-//     if(translatedPhraseObject !== undefined){
-//       const translatedPhrase = translatedPhraseObject.englishPronunciation
-
-//       document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
-//     }
-
-//   }
-// })

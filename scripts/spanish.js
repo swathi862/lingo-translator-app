@@ -53,7 +53,7 @@ document.querySelector("#spanish").addEventListener("click", function(){
   // console.log("You clicked spanish")
   
   // Printing the contents
-  document.querySelector("#language-container").innerHTML = languageContentsContainer(spanishData.name, "Spanish", printCountriesSpoken(spanishData), notablePeopleContainer(spanishData), funFactsData(spanishData))
+  document.querySelector("#language-container").innerHTML = languageContentsContainer(spanishData.name, "Spanish", printCountriesSpoken(spanishData), notablePeopleContainer(spanishData), funFactsData(spanishData, ""))
   // Translator print
   document.querySelector("#language-container").innerHTML += buildTranslatorContainer(spanishData.name.toLowerCase())
   // spanish translator

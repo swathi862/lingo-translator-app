@@ -52,7 +52,7 @@ document.querySelector("#french").addEventListener("click", function(){
   // console.log("You clicked French")
   
   // Printing the contents
-  document.querySelector("#language-container").innerHTML = languageContentsContainer(frenchData.name, "French", printCountriesSpoken(frenchData), notablePeopleContainer(frenchData), funFactsData(frenchData))
+  document.querySelector("#language-container").innerHTML = languageContentsContainer(frenchData.name, "French", printCountriesSpoken(frenchData), notablePeopleContainer(frenchData), funFactsData(frenchData, ""))
   // Translator print
   document.querySelector("#language-container").innerHTML += buildTranslatorContainer(frenchData.name.toLowerCase())
   // French translator

@@ -1,4 +1,4 @@
-
+// Splash page DOM printer
 function splashpageContainer(){
     return `
     <div class="card" style="width: 32rem">
@@ -55,15 +55,17 @@ function printCountriesSpoken (language){
     return countriesSpokenContainer
     }
 
-// Fun Facts loop
-//Function for printing Langauge Name h1 element
-// function h1(text, classNames) {
-//     return `<h1 class="${classNames}">${text}</h1>`
-// }
-
+function mandarinFunFactsData(){
+    return `
+    <h4>Dialect Info</h4>
+    <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
+    <h4>Chinese Dialects</h4>
+    <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>
+    `
+}
 
 //Function for printing 'Fun Facts' section to page
-function funFactsData(languageObject){
+function funFactsData(languageObject, funMandarin){
     let funFactString = `
     <div>
     <h4>Related Languages</h4><ul>`
@@ -82,17 +84,14 @@ function funFactsData(languageObject){
     <p>${languageObject.funFacts.lettersInAlphabet}</p>
     <h4>Number of Speakers</h4>
     <p>${languageObject.funFacts.numberOfSpeakers}</p>
-    <h4>Dialect Info</h4>
-    <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
-    <h4>Chinese Dialects</h4>
-    <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>
+    ${funMandarin}
     </div>`
 
     return funFactString
 }
 
     
-
+// Dom Printer function for accordion and contents
 const languageContentsContainer = (classNames, text, countriesSpoken, notablePeople, funFacts) => {
     return `
     <div class="jumbotron d-flex justify-content-center h-25 d-inline-block">
@@ -149,7 +148,6 @@ const languageContentsContainer = (classNames, text, countriesSpoken, notablePeo
 }
 
 
-// const h1 = (text, classNames) => `<h1 class="${classNames}">${text}</h1>`
 //Function for building translator container (user input with button)
 function buildTranslatorContainer (languageName) {
     return`
