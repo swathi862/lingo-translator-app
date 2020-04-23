@@ -46,5 +46,4 @@ const spanishData = {
       whatsYourName: "cuál es tu nombre?"
     }
   };
-  // const pageContentContainer = document.querySelector("#language-container");
   // pageContentContainer.innerHTML = funFactsData(spanishData)

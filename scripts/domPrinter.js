@@ -34,7 +34,19 @@ function funFactsData(languageObject){
 
 // Go to french.js to see how we can execute this function
 
+//spanish countries spoken loop
+function printCountriesSpoken (language){
 
+let countriesSpokenContainer = `<h3>Countries Spoken</h3>
+<ul>`
+
+for (let i=0; i < language.countriesSpoken.length; i++){
+//   const countriesSpoken = spanishData.countriesSpoken[i]
+  countriesSpokenContainer += `<li>${language.countriesSpoken[i]}</li>`
+}
+countriesSpokenContainer += `</ul>`
+return countriesSpokenContainer
+}
 // -------------------- For reference! -----------------//
 
 // Here are some other ways to right the exact same function we wrote above:

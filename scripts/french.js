@@ -52,6 +52,13 @@ const frenchData = {
 // This line of code calls the h1 function defined in domPrinter.js and passes in the text (the name property in the above object) and a class name of "french-heading", which currently has no applied CSS so we won't see a difference
 document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
 
+const frenchButton = document.querySelector("#french")
+frenchButton.addEventListener("click", function(){
+// console.log("you clicked the french button")
+document.querySelector("#language-container").innerHTML = h1(frenchData.name, "french-heading")
+document.querySelector("#language-container").innerHTML += printCountriesSpoken(frenchData)
+})
+
 
 
 
