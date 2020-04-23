@@ -58,7 +58,7 @@ const mandarinData = {
     if(event.target.id === "translate-btn"){
       console.log(mandarinData.dictionary)
       const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
-  
+      
       const translatedPhrase = mandarinData.dictionary[translate()]
   
       document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)

@@ -61,7 +61,7 @@ function translate () {
     let phraseToLookUp;
 
     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
-
+    console.log("the translate function is running")
         if (toBeTranslatedValue === "hello" || toBeTranslatedValue === "hi"){
           return phraseToLookUp = "hello"
         }
