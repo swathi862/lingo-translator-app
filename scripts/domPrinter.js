@@ -144,6 +144,10 @@ const languageContentsContainer = (classNames, text, countriesSpoken, notablePeo
     </div>
   </div>
   <div class="row">
+  </div>
+  <br>
+  <div class="jumbotron d-flex justify-content-center h-25 d-inline-block">
+  <h3>Translate Now!<h3>
   </div>`
 }
 
