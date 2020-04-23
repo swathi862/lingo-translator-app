@@ -57,3 +57,12 @@
     }
     }
   };
+
+  document.querySelector("#language-container").innerHTML = h1(hindiData.name, "hindi-heading")
+
+const hindiButton = document.querySelector("#hindi")
+hindiButton.addEventListener("click", function(){
+// console.log("you clicked the hindi button")
+document.querySelector("#language-container").innerHTML = h1(hindiData.name, "hindi-heading")
+document.querySelector("#language-container").innerHTML += printCountriesSpoken(hindiData)
+})
