@@ -10,6 +10,11 @@
 // }
 
 
+
+
+
+
+
 // Go to french.js to see how we can execute this function
 
 // Notable people container
@@ -87,7 +92,7 @@ function notablePeopleContainer(language){
     return notablePeoplehtmlString
 }
 
-//Countries Spoken loop
+// Countries Spoken loop
 function printCountriesSpoken (language){
 
     let countriesSpokenContainer = `
@@ -100,8 +105,28 @@ function printCountriesSpoken (language){
     countriesSpokenContainer += `</ul>`
     return countriesSpokenContainer
     }
+
+// Fun Facts loop
+function funFactsData(languageObject){
+    let funFactString = `
+    <div>
+    <h4>Related Languages</h4><ul>`
+
     
 
+    for(i = 0; i < languageObject.funFacts.relatedLanguages.length; i++){
+    funFactString += `<li>${languageObject.funFacts.relatedLanguages[i]}</li>`
+    }
+
+    funFactString += `</ul><h4>Letters in the Alphabet</h4>
+    <p>${languageObject.funFacts.lettersInAlphabet}</p>
+    <h4>Number of Speakers</h4>
+    <p>${languageObject.funFacts.numberOfSpeakers}</p>
+    </div>`
+
+    return funFactString
+}
+    
 
 const languageContentsContainer = (classNames, text, countriesSpoken, notablePeople, funFacts) => {
     return `
@@ -153,6 +178,8 @@ const languageContentsContainer = (classNames, text, countriesSpoken, notablePeo
         </div>
       </div>
     </div>
+  </div>
+  <div class="row">
   </div>`
 }
 // -------------------- For reference! -----------------//
@@ -169,3 +196,18 @@ const languageContentsContainer = (classNames, text, countriesSpoken, notablePeo
 
 // const h1 = (text, classNames) => `<h1 class="${classNames}">${text}</h1>`
 
+
+
+
+// function funFactsData(languageObject){
+//     for(i = 0; i < languageObject.funFacts.relatedLanguages.length; i++)
+//     return  `<div>
+//     <h2>Fun Facts</h2>
+//     <h4>Related Languages</h4>
+//     <li>${languageObject.funFacts.relatedLanguages[0]}, ${languageObject.funFacts.relatedLanguages[1]}</li>
+//     <h4>Letters in the Alphabet</h4>
+//     <li>${languageObject.funFacts.lettersInAlphabet}</li>
+//     <h4>Number of Speakers</h4>
+//     <li>${languageObject.funFacts.numberOfSpeakers}</li>
+//     </div>`
+// }

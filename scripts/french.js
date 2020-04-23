@@ -67,7 +67,7 @@ const frenchData = {
 // French click event
 document.querySelector("#french").addEventListener("click", function(){
   // Printing the contents
-  document.querySelector("#language-container").innerHTML = languageContentsContainer(frenchData.name, "French", printCountriesSpoken(frenchData), notablePeopleContainer(frenchData), "Fun Facts")
+  document.querySelector("#language-container").innerHTML = languageContentsContainer(frenchData.name, "French", printCountriesSpoken(frenchData), notablePeopleContainer(frenchData), funFactsData(frenchData))
 
 })
 
@@ -75,3 +75,4 @@ document.querySelector(".navbar-brand").addEventListener("click", function(){
   document.querySelector("#language-container").classList.remove("container")
   document.querySelector("#language-container").innerHTML = splashpageContainer()
 })
+

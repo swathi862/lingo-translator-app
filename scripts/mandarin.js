@@ -48,11 +48,27 @@ const mandarinData = {
   // document.querySelector("#language-container").innerHTML += printCountriesSpoken(mandarinData)
   // })
 
+
+  // Mandarin click event
   document.querySelector("#mandarin").addEventListener("click", function(){
     // Printing the contents
-    document.querySelector("#language-container").innerHTML = languageContentsContainer(mandarinData.name, "Mandarin", printCountriesSpoken(mandarinData), notablePeopleContainer(mandarinData), "Fun Facts")
+    document.querySelector("#language-container").innerHTML = languageContentsContainer(mandarinData.name, "Mandarin", printCountriesSpoken(mandarinData), notablePeopleContainer(mandarinData), funFactsData(mandarinData))
   
   })
+
+  
+  document.querySelector("#mandarin").addEventListener("click", function(){
+    const pageContentContainer = document.querySelector("#language-container");
+    pageContentContainer.innerHTML = h1(mandarinData.name, "mandarin-heading")  
+  pageContentContainer.innerHTML += funFactsData(mandarinData)
+  pageContentContainer.innerHTML += 
+  `<h4>Dialect Info</h4>
+  <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
+  <h4>Chinese Dialects</h4>
+  <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>`
+})
+  
+  
   
 
 
