@@ -49,8 +49,9 @@ const frenchData = {
 
 // French Info click event
 document.querySelector("#french").addEventListener("click", function(){
-  // console.log("You clicked French")
-  
+  // Add container class
+  document.querySelector("#language-container").classList.add("container")
+
   // Printing the contents
   document.querySelector("#language-container").innerHTML = languageContentsContainer(frenchData.name, "French", printCountriesSpoken(frenchData), notablePeopleContainer(frenchData), funFactsData(frenchData, ""))
   // Translator print
@@ -83,38 +84,55 @@ document.querySelector("#language-container").addEventListener("click", function
   }
 })
 
-
-
-
-
-
-
-// const frenchButton = document.querySelector("#french")
-// frenchButton.addEventListener("click", function(){
-//   // French Heading
-//   frenchButton = h1(frenchData.name, "french-heading")
-//   //French translator area
-//   frenchButton += buildTranslatorContainer(frenchData.name.toLowerCase())
-//   // Printer
-//   frenchButton += languageContentsContainer(frenchData.name, "French", printCountriesSpoken(frenchData), notablePeopleContainer(frenchData), funFactsData(frenchData))
-//   // French translator
-//   if(event.target.id === "translate-btn-french"){
-
-//     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
-
-//     const translatedPhrase = frenchData.dictionary[translate()]
-    
-//     if (translatedPhrase !== undefined){
-//       document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
-//     }
-//   }
-
-
-// })
-
-
 // Navbar Home button click event
-// document.querySelector(".navbar-brand").addEventListener("click", function(){
-//   document.querySelector("#language-container").classList.remove("container")
-//   document.querySelector("#language-container").innerHTML = splashpageContainer()
-// })
+document.querySelector(".navbar-brand").addEventListener("click", function(){
+  document.querySelector("#language-container").classList.remove("container")
+  document.querySelector("#language-container").innerHTML = splashpageContainer()
+
+  document.querySelector(".submit-btn").addEventListener("click", function(){
+    console.log("You clicked sign in")
+    
+    document.querySelector("#language-container").classList.add("container")
+  
+    // Printing the contents
+    document.querySelector("#language-container").innerHTML = languageContentsContainer(frenchData.name, "French", printCountriesSpoken(frenchData), notablePeopleContainer(frenchData), funFactsData(frenchData, ""))
+    // Translator print
+    document.querySelector("#language-container").innerHTML += buildTranslatorContainer(frenchData.name.toLowerCase())
+    // French translator
+    if(event.target.id === "translate-btn-french"){
+  
+      const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+  
+      const translatedPhrase = frenchData.dictionary[translate()]
+      
+      if (translatedPhrase !== undefined){
+        document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+      }
+    }
+  
+  })
+})
+
+// Submit button click event
+document.querySelector(".submit-btn").addEventListener("click", function(){
+  console.log("You clicked sign in")
+  
+  document.querySelector("#language-container").classList.add("container")
+
+  // Printing the contents
+  document.querySelector("#language-container").innerHTML = languageContentsContainer(frenchData.name, "French", printCountriesSpoken(frenchData), notablePeopleContainer(frenchData), funFactsData(frenchData, ""))
+  // Translator print
+  document.querySelector("#language-container").innerHTML += buildTranslatorContainer(frenchData.name.toLowerCase())
+  // French translator
+  if(event.target.id === "translate-btn-french"){
+
+    const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+
+    const translatedPhrase = frenchData.dictionary[translate()]
+    
+    if (translatedPhrase !== undefined){
+      document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+    }
+  }
+
+})
