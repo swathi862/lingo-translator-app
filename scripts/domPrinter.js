@@ -108,7 +108,7 @@ function buildTranslatedPhraseContainer (toBeTranslatedValue, translatedPhrase) 
 }
 
 // function textToSpeechFunction (translatedString){
-//     return
-//     const text = `${translatedString}`.value
-//     console.log(text)
+//     return`
+//     const text = translatedString.toString()
+//     console.log(text)`
 // }

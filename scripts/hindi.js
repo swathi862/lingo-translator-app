@@ -78,6 +78,9 @@ document.querySelector("#language-container").addEventListener("click", function
       const translatedPhrase = translatedPhraseObject.englishPronunciation
 
       document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+
+      const translatedHTMLString = buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+      textToSpeechFunction(translatedHTMLString)
     }
     
   }
