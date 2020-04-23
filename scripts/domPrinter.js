@@ -51,17 +51,27 @@ function buildTranslatorContainer (languageName) {
 }
 
 function buildTranslatedPhraseContainer (toBeTranslatedValue, translatedPhrase) {
-    return`
-    <div id = "phrase-container" class = "row">
-        <p>The phrase <strong><em>${toBeTranslatedValue}</em></strong> translates to <strong><em>${translatedPhrase}</em></strong></p>
-    </div>`
+    if (translatedPhrase === "undefined")
+    {
+        const translatedPhrase = "I'm sorry, the phrase you entered is not in our dictionary! Please, try another phrase :)"
+  
+        document.querySelector("#translator-container").innerHTML += `
+        <p>${translatedPhrase}</p>`
+    }
+    
+    else{
+        return`
+        <div id = "phrase-container" class = "row">
+            <p>The phrase <strong><em>${toBeTranslatedValue}</em></strong> translates to <strong><em>${translatedPhrase}</em></strong></p>
+        </div>`
+    }
 }
 
 function translate () {
     let phraseToLookUp;
 
     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
-    console.log("the translate function is running")
+
         if (toBeTranslatedValue === "hello" || toBeTranslatedValue === "hi"){
           return phraseToLookUp = "hello"
         }
