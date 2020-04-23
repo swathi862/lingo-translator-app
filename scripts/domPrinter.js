@@ -1,15 +1,73 @@
-
-//Function for printing Langauge Name h1 element
-function h1(text, classNames) {
-    return `<h1 class="${classNames}">${text}</h1>`
+// Splash page DOM printer
+function splashpageContainer(){
+    return `
+    <div class="card" style="width: 32rem">
+    <div class="card-body" style="width: 30rem">
+    <form class="p-4">
+        <div class="form-group">
+            <label for="exampleDropdownFormEmail2">Email address</label>
+            <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleDropdownFormPassword2">Password</label>
+            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                <label class="form-check-label" for="dropdownCheck2">
+                Remember me
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary submit-btn">Sign in</button>
+    </form>
+    </div>
+  </div>
+    `
 }
 
+// Notable People loop
+function notablePeopleContainer(language){
+    let notablePeoplehtmlString = `
+    <ul>`
+    
+    // Notable people loop
+    for (let i = 0; i < language.notablePeople.length; i++) {
+        notablePeoplehtmlString += `<li>${language.notablePeople[i]}</li>`;
+      }
+      notablePeoplehtmlString += `</ul>`;
+
+    return notablePeoplehtmlString
+}
+
+// Countries Spoken loop
+function printCountriesSpoken (language){
+
+    let countriesSpokenContainer = `
+    <ul>`
+    
+    for (let i=0; i < language.countriesSpoken.length; i++){
+    //   const countriesSpoken = spanishData.countriesSpoken[i]
+      countriesSpokenContainer += `<li>${language.countriesSpoken[i]}</li>`
+    }
+    countriesSpokenContainer += `</ul>`
+    return countriesSpokenContainer
+    }
+
+function mandarinFunFactsData(){
+    return `
+    <h4>Dialect Info</h4>
+    <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
+    <h4>Chinese Dialects</h4>
+    <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>
+    `
+}
 
 //Function for printing 'Fun Facts' section to page
-function funFactsData(languageObject){
+function funFactsData(languageObject, funMandarin){
     let funFactString = `
     <div>
-    <h2>Fun Facts</h2>
     <h4>Related Languages</h4><ul>`
 
     if(languageObject.name === "Hindi"){
@@ -26,23 +84,71 @@ function funFactsData(languageObject){
     <p>${languageObject.funFacts.lettersInAlphabet}</p>
     <h4>Number of Speakers</h4>
     <p>${languageObject.funFacts.numberOfSpeakers}</p>
+    ${funMandarin}
     </div>`
 
     return funFactString
 }
 
+    
+// Dom Printer function for accordion and contents
+const languageContentsContainer = (classNames, text, countriesSpoken, notablePeople, funFacts) => {
+    return `
+    <div class="jumbotron d-flex justify-content-center h-25 d-inline-block">
+        <h1 class="${classNames}" >${text}</h1>
+    </div>
 
-//Function for printing 'Countries Spoken' section to page
-function printCountriesSpoken (language){
-
-let countriesSpokenContainer = `<h3>Countries Spoken</h3>
-<ul>`
-
-for (let i=0; i < language.countriesSpoken.length; i++){
-  countriesSpokenContainer += `<li>${language.countriesSpoken[i]}</li>`
-}
-countriesSpokenContainer += `</ul>`
-return countriesSpokenContainer
+    <div class="accordion" id="accordionExample">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h2 class="mb-0">
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            Countries Spoken
+          </button>
+        </h2>
+      </div>
+  
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <div class="card-body">
+        ${countriesSpoken}
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingTwo">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Notable People
+          </button>
+        </h2>
+      </div>
+      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+        <div class="card-body">
+        ${notablePeople}        
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header" id="headingThree">
+        <h2 class="mb-0">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Fun Facts
+          </button>
+        </h2>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+        <div class="card-body">
+        ${funFacts}        
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+  </div>
+  <br>
+  <div class="jumbotron d-flex justify-content-center h-25 d-inline-block">
+  <h3>Translate Now!<h3>
+  </div>`
 }
 
 
