@@ -38,7 +38,22 @@ const mandarinData = {
       whatsYourName: " 你叫什么名字"
     }
   }
+  document.querySelector("#mandarin").addEventListener("click", function(){
+    document.querySelector("#language-container").innerHTML = h1(mandarinData.name, "mandarin-heading")
+  })
+  
+  
+document.querySelector("#mandarin").addEventListener("click",function(){
+  const pageContentContainer = document.querySelector("#language-container");
+  pageContentContainer.innerHTML = funFactsData(mandarinData)})
 
 
 
-
+document.querySelector("#mandarin"),addEventListener("click", function(){
+  const pageContentContainer = document.querySelector("#language-container");
+  pageContentContainer.innerHTML += 
+  `<h4>Dialect Info</h4>
+  <p>${mandarinData.funFacts.mandrinInfo.dialectInfo}</p>
+  <h4>Chinese Dialects</h4>
+  <p>${mandarinData.funFacts.mandrinInfo.chineseDialects}</p>`
+})
