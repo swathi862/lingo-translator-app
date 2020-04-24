@@ -9,7 +9,6 @@ a {
 
 .btn {
     color: rgb(95, 95, 95);
-
 }
 
 .submit-btn {
@@ -53,3 +52,9 @@ header{
     display: flex;
     background-image: url("https://cdn.pixabay.com/photo/2018/03/20/18/23/cartography-3244166_960_720.png");
 }
+
+.btn-outline-light{
+    padding: 1rem;
+    border-radius: 5em;
+}
+

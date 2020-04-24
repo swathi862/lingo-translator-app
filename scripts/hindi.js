@@ -70,18 +70,34 @@ document.querySelector("#hindi").addEventListener("click", function(){
   document.querySelector("#language-container").innerHTML += buildTranslatorContainer(hindiData.name.toLowerCase())
 
 // Hindi translator click event
+// document.querySelector("#language-container").addEventListener("click", function(){
+//   if(event.target.id === "translate-btn-hindi"){
+
+//     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+
+//     const translatedPhraseObject = hindiData.dictionary[translate()]
+
+//     if (translatedPhraseObject !== undefined){
+//       const translatedPhrase = translatedPhraseObject.englishPronunciation
+//       document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+
+//       textToSpeechFunction(hindiData.name, toBeTranslatedValue, translatedPhrase)
+//     }
+//     }
+// })
+
 document.querySelector("#language-container").addEventListener("click", function(){
   if(event.target.id === "translate-btn-hindi"){
-
     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
 
-    const translatedPhraseObject = hindiData.dictionary[translate()]
-
-    if (translatedPhraseObject !== undefined){
-      const translatedPhrase = translatedPhraseObject.englishPronunciation
-      document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
-
-      textToSpeechFunction(hindiData.name, toBeTranslatedValue, translatedPhrase)
+    if(toBeTranslatedValue !== ""){
+      apiFetch.getAll(toBeTranslatedValue, "en", "hi")
+    }
+    else{
+      const translatedPhrase = "I'm sorry, the phrase you entered is not in our dictionary! Please, try another phrase :)"
+      speechSynthesis.speak(new SpeechSynthesisUtterance(translatedPhrase))
+      document.querySelector("#translator-container").innerHTML += `
+      <p>${translatedPhrase}</p>`
     }
     }
 })

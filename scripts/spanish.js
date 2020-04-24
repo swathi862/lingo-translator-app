@@ -61,17 +61,34 @@ document.querySelector("#spanish").addEventListener("click", function(){
 })
 
 // Spanish translator click event
+// document.querySelector("#language-container").addEventListener("click", function(){
+//   if(event.target.id === "translate-btn-spanish"){
+
+//     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
+
+//     const translatedPhrase = spanishData.dictionary[translate()]
+
+//     if (translatedPhrase !== undefined){
+//       document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+
+//       textToSpeechFunction(spanishData.name, toBeTranslatedValue, translatedPhrase)
+//     }
+//   }
+// })
+
 document.querySelector("#language-container").addEventListener("click", function(){
   if(event.target.id === "translate-btn-spanish"){
-
     const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
 
-    const translatedPhrase = spanishData.dictionary[translate()]
-
-    if (translatedPhrase !== undefined){
-      document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
-
-      textToSpeechFunction(spanishData.name, toBeTranslatedValue, translatedPhrase)
+    if(toBeTranslatedValue !== ""){
+      apiFetch.getAll(toBeTranslatedValue, "en", "es")
     }
-  }
+    else{
+      const translatedPhrase = "I'm sorry, the phrase you entered is not in our dictionary! Please, try another phrase :)"
+      speechSynthesis.speak(new SpeechSynthesisUtterance(translatedPhrase))
+      document.querySelector("#translator-container").innerHTML += `
+      <p>${translatedPhrase}</p>`
+    }
+
+    }
 })

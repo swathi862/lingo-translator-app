@@ -167,8 +167,37 @@ function buildTranslatorContainer (languageName) {
     </footer>`
 }
 
+function buildUniversalTranslatorContainer () {
+  return`
+  <footer class = "page-footer font-small blue pt-4">
+  <div class = "row">
+      <div class = "col-sm" id = "translator-container">
+          <input id = "user-input" type= "text" placeholder= "Enter text">
+          <button id= "translate-btn-universal" class="btn btn-primary auto">Translate</button>
+      </div>
+  </div>
+  </footer>`
+}
 
-//Function that matches a phrase entered through user input to a key from the language's dictionary; returns that key
+function buildLanguageOptionsContainer (labelName, selectIDAddOn) {
+  let languageArray = Object.keys(languageCodesObject)
+  let languageOptionsHTMLString = `<div class = "row">
+  <div class = "col-sm" id = "language-options">
+    <label for = "languages">${labelName}</label>
+      <select id= "language-selector-${selectIDAddOn}">`
+
+    for (let i = 0; i < languageArray.length; i++){
+      languageOptionsHTMLString += `<option>${languageArray[i]}</option>`
+    }
+
+  languageOptionsHTMLString += `</select>
+  </div>`
+
+  return languageOptionsHTMLString
+}
+
+
+// Function that matches a phrase entered through user input to a key from the language's dictionary; returns that key
 function translate () {
     let phraseToLookUp;
 
@@ -241,4 +270,24 @@ function textToSpeechFunction (languageName, toBeTranslatedValue, translatedPhra
         speechSynthesis.speak(utterance)
     }
 
+}
+
+//Function for universal Translator API
+const apiFetch = {
+  getAll: (text, languageFrom, languageTo) => {
+      fetch(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20200420T153316Z.67b81eb3be4a746e.9ef97414c4d9092d1fa3de6691239ca6795ce0cb&text=${text}&lang=${languageFrom}-${languageTo}&format=html
+      `)
+      .then(r => r.json())
+      .then(pr => pr.text.forEach(element => {
+      document.querySelector("#translator-container").innerHTML +=         
+      `<div id = "phrase-container" class = "row">
+      <p>The phrase <strong><em>${text}</em></strong> translates to <strong><em>${element}</em></strong></p>
+      </div>`
+      let utterance = new SpeechSynthesisUtterance(`The phrase ${text} translates to ${element}`)
+
+      utterance.lang = languageTo
+      speechSynthesis.cancel();
+      speechSynthesis.speak(utterance)
+      }))
+  }
 }
