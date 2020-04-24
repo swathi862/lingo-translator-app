@@ -62,6 +62,8 @@ const hindiData = {
 
   // hindi Info click event
 document.querySelector("#hindi").addEventListener("click", function(){  
+  // Add container class
+  document.querySelector("#language-container").classList.add("container")
   // Printing the contents
   document.querySelector("#language-container").innerHTML = languageContentsContainer(hindiData.name, "Hindi", printCountriesSpoken(hindiData), notablePeopleContainer(hindiData), funFactsData(hindiData,""))
   // Translator print

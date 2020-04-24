@@ -49,3 +49,7 @@ header{
     text-align: center;
 }
 
+.backSplash {
+    display: flex;
+    background-image: url("https://cdn.pixabay.com/photo/2018/03/20/18/23/cartography-3244166_960_720.png");
+}

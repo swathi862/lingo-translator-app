@@ -41,8 +41,8 @@ const mandarinData = {
  
   // Mandarin Info click event
   document.querySelector("#mandarin").addEventListener("click", function(){
-    // console.log("You clicked mandarin")
-    
+    // Add container class
+    document.querySelector("#language-container").classList.add("container")
     // Printing the contents
     document.querySelector("#language-container").innerHTML = languageContentsContainer(mandarinData.name, "Mandarin", printCountriesSpoken(mandarinData), notablePeopleContainer(mandarinData), funFactsData(mandarinData, mandarinFunFactsData()))
     // Translator print

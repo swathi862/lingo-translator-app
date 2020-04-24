@@ -50,8 +50,9 @@ const spanishData = {
 
   // spanish Info click event
 document.querySelector("#spanish").addEventListener("click", function(){
-  // console.log("You clicked spanish")
-  
+  // Add container class
+  document.querySelector("#language-container").classList.add("container")
+
   // Printing the contents
   document.querySelector("#language-container").innerHTML = languageContentsContainer(spanishData.name, "Spanish", printCountriesSpoken(spanishData), notablePeopleContainer(spanishData), funFactsData(spanishData, ""))
   // Translator print

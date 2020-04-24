@@ -1,28 +1,30 @@
 // Splash page DOM printer
 function splashpageContainer(){
     return `
-    <div class="card" style="width: 32rem">
-    <div class="card-body" style="width: 30rem">
-    <form class="p-4">
-        <div class="form-group">
-            <label for="exampleDropdownFormEmail2">Email address</label>
-            <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
-        </div>
-        <div class="form-group">
-            <label for="exampleDropdownFormPassword2">Password</label>
-            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                <label class="form-check-label" for="dropdownCheck2">
-                Remember me
-                </label>
+    <div class="backSplash d-flex justify-content-center">
+      <div class="card" style="width: 32rem">
+        <div class="card-body" style="width: 30rem">
+        <form class="p-4">
+            <div class="form-group">
+                <label for="exampleDropdownFormEmail2">Email address</label>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com">
             </div>
+            <div class="form-group">
+                <label for="exampleDropdownFormPassword2">Password</label>
+                <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                    <label class="form-check-label" for="dropdownCheck2">
+                    Remember me
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">Sign in</button>
+        </form>
         </div>
-        <button type="submit" class="btn btn-primary submit-btn">Sign in</button>
-    </form>
-    </div>
+      </div>
   </div>
     `
 }
@@ -145,10 +147,10 @@ const languageContentsContainer = (classNames, text, countriesSpoken, notablePeo
   </div>
   <div class="row">
   </div>
-  <br>
-  <div class="jumbotron d-flex justify-content-center h-25 d-inline-block">
-  <h3>Translate Now!<h3>
-  </div>`
+    <br>
+    <div class="jumbotron d-flex justify-content-center h-25 d-inline-block">
+        <h3>Translate Now!<h3>
+    </div>`
 }
 
 
