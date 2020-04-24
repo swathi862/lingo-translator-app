@@ -198,7 +198,7 @@ function translate () {
   
         else{
           const translatedPhrase = "I'm sorry, the phrase you entered is not in our dictionary! Please, try another phrase :)"
-  
+          speechSynthesis.speak(new SpeechSynthesisUtterance(translatedPhrase))
           document.querySelector("#translator-container").innerHTML += `
           <p>${translatedPhrase}</p>`
         }
@@ -211,4 +211,32 @@ function buildTranslatedPhraseContainer (toBeTranslatedValue, translatedPhrase) 
         <div id = "phrase-container" class = "row">
             <p>The phrase <strong><em>${toBeTranslatedValue}</em></strong> translates to <strong><em>${translatedPhrase}</em></strong></p>
         </div>`
+}
+
+//Function for text to speech
+function textToSpeechFunction (languageName, toBeTranslatedValue, translatedPhrase){
+
+    let utterance = new SpeechSynthesisUtterance(`The phrase ${toBeTranslatedValue} translates to ${translatedPhrase}`)
+
+    if (languageName === "Hindi"){
+        utterance.lang = 'hi-IN'
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance)
+    }
+    else if (languageName === "French"){
+        utterance.lang = 'fr-FR'
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance)
+    }
+    else if (languageName === "Spanish"){
+        utterance.lang = 'es-ES'
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance)
+    }
+    else if (languageName === "Mandarin"){
+        utterance.lang = 'zh-CN'
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance)
+    }
+
 }

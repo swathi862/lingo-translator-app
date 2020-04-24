@@ -55,18 +55,7 @@ document.querySelector("#french").addEventListener("click", function(){
   document.querySelector("#language-container").innerHTML = languageContentsContainer(frenchData.name, "French", printCountriesSpoken(frenchData), notablePeopleContainer(frenchData), funFactsData(frenchData, ""))
   // Translator print
   document.querySelector("#language-container").innerHTML += buildTranslatorContainer(frenchData.name.toLowerCase())
-  // French translator
-  if(event.target.id === "translate-btn-french"){
 
-    const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
-
-    const translatedPhrase = frenchData.dictionary[translate()]
-    
-    if (translatedPhrase !== undefined){
-      document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
-    }
-  }
-  
 })
 
 // French translator click event
@@ -79,6 +68,8 @@ document.querySelector("#language-container").addEventListener("click", function
 
     if (translatedPhrase !== undefined){
       document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+
+      textToSpeechFunction(frenchData.name, toBeTranslatedValue, translatedPhrase)
     }
   }
 })

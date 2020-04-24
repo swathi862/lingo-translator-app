@@ -47,17 +47,6 @@ const mandarinData = {
     document.querySelector("#language-container").innerHTML = languageContentsContainer(mandarinData.name, "Mandarin", printCountriesSpoken(mandarinData), notablePeopleContainer(mandarinData), funFactsData(mandarinData, mandarinFunFactsData()))
     // Translator print
     document.querySelector("#language-container").innerHTML += buildTranslatorContainer(mandarinData.name.toLowerCase())
-    // mandarin translator
-    if(event.target.id === "translate-btn-mandarin"){
-  
-      const toBeTranslatedValue = document.querySelector("#text-area").value.toLowerCase()
-  
-      const translatedPhrase = mandarinData.dictionary[translate()]
-      
-      if (translatedPhrase !== undefined){
-        document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
-      }
-    }
     
   })
   
@@ -71,6 +60,8 @@ const mandarinData = {
   
       if (translatedPhrase !== undefined){
         document.querySelector("#translator-container").innerHTML += buildTranslatedPhraseContainer(toBeTranslatedValue, translatedPhrase)
+
+        textToSpeechFunction(mandarinData.name, toBeTranslatedValue, translatedPhrase)
       }
     }
   })
